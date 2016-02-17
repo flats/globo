@@ -15,7 +15,7 @@
     "bootstrap": "~3.3.5"
   },
   "resolutions": {
-    "ember": "^2.3.1",
+    "ember": "> 1.5.0-beta.3",
     "ember-data": "^2.3.3"
   },
   "devDependencies": {
