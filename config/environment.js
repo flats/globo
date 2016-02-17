@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'globo',
     environment: environment,
-    contentSecurityPolicy: { 'script-src': "'self' 'unsafe-inline' 'unsafe-eval' https://connect.facebook.net http://connect.facebook.net", 'style-src': "'self' 'unsafe-inline'", 'default-src': "'self' http://staticxx.facebook.com https://www.facebook.com http://connect.facebook.net https://connect.facebook.net", 'img-src': "'self' https://www.facebook.com"  },
+    contentSecurityPolicy: { 'script-src': "'self' 'unsafe-inline' 'unsafe-eval' https://connect.facebook.net http://connect.facebook.net", 'style-src': "'self' 'unsafe-inline'", 'default-src': "'self' http://staticxx.facebook.com https://www.facebook.com http://connect.facebook.net https://connect.facebook.net", 'img-src': "'self' https://www.facebook.com" },
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
