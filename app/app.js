@@ -15,7 +15,7 @@ App = Ember.Application.extend({
 
 // Injects 'torii' property on all routes, adds
 // torii's initializers
-require('torii/load-initializers')['default']();
+// require('torii/load-initializers')['default']();
 
 loadInitializers(App, config.modulePrefix);
 
