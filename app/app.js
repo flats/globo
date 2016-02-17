@@ -13,6 +13,10 @@ App = Ember.Application.extend({
   Resolver
 });
 
+// Injects 'torii' property on all routes, adds
+// torii's initializers
+require('torii/load-initializers')['default']();
+
 loadInitializers(App, config.modulePrefix);
 
 export default App;
