@@ -20,7 +20,7 @@ module.exports = function(environment) {
           scope: 'email'
         }
       }
-    }
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
