@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'ember-bootstrap-boilerplate',
+    modulePrefix: 'globo',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -12,6 +12,15 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+
+    torii: {
+      providers: {
+        'facebook-connect': {
+          appId: process.env.MY_OTHER_KEY,
+          scope: 'email'
+        }
+      }
+    }
 
     APP: {
       // Here you can pass flags/options to your application instance

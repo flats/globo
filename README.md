@@ -1,6 +1,6 @@
-# Ember-bootstrap-boilerplate
+# globo
 
-A basic Ember boilerplate skeleton with bootstrap pre-loaded.  Just clone, npm install, `git remote rm origin` and start building your project.  Additionally, `ctrl-shift-f` to find and replace all instances of `ember-bootstrap-boilerplate` with your project's name.
+A basic Ember boilerplate skeleton with bootstrap pre-loaded.  Just clone, npm install, `git remote rm origin` and start building your project.  Additionally, `ctrl-shift-f` to find and replace all instances of `globo` with your project's name.
 
 Uses [Ember CLI Sass](https://github.com/aexmachina/ember-cli-sass) and [Ember Boostrap](https://www.npmjs.com/package/ember-bootstrap).
 
