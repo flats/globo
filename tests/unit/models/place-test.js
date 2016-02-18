@@ -1,8 +1,8 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('pins', 'Unit | Model | pins', {
+moduleForModel('place', 'Unit | Model | place', {
   // Specify the other units that are required for this test.
-  needs: ['model:user', 'model:place']
+  needs: []
 });
 
 test('it exists', function(assert) {
