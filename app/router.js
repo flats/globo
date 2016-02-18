@@ -7,6 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('pins');
+  this.route('atlas');
 });
 
 export default Router;
