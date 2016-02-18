@@ -13,7 +13,8 @@
     "loader.js": "ember-cli/loader.js#3.4.0",
     "qunit": "~1.20.0",
     "bootstrap": "~3.3.5",
-    "active-model-adapter": "^2.0.3"
+    "active-model-adapter": "^2.0.3",
+    "torii": "^0.6.1"
   },
   "resolutions": {
     "ember": "~2.3.1",
