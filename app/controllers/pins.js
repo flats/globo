@@ -5,5 +5,11 @@ export default Ember.Controller.extend({
   coordsFor: Ember.computed.map('model.@each.place', function(pin, index) {
     return [pin.get('place.lat'), pin.get('place.long')];
   }),
-  names: this.modelFor(this.routeName).get('name');
+  // WHat is this for?
+  model(){
+    return Ember.RSVP.hash({
+      names: this.modelFor(this.routeName).get('name')
+    });
+
+  }
 });
