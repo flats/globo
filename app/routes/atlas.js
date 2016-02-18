@@ -6,7 +6,8 @@ export default Ember.Route.extend({
       trips: this.store.findAll('trip'),
       pins: this.store.findAll('pin'),
       places:this.store.findAll('place'),
-      newPin: this.store.createRecord('pin')
+      newPin: this.store.createRecord('pin'),
+      newPlace: this.store.createRecord('place')
     });
   }
   // actions:{
