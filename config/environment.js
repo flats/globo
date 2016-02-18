@@ -15,10 +15,11 @@ module.exports = function(environment) {
     },
 
     torii: {
+      sessionServiceName: 'session',
       providers: {
-        'facebook-connect': {
-          appId: process.env.FB_KEY,
-          scope: 'email'
+        'facebook-oauth2': {
+          apiKey: process.env.FB_KEY,
+          redirectUri: 'http://localhost:4200/dashboard'
         }
       }
     },
