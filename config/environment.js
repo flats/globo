@@ -24,6 +24,12 @@ module.exports = function(environment) {
       }
     },
 
+    'simple-auth': {
+      authenticationRoute: 'session',
+      authorizer: 'authorizer:application',
+      crossOriginWhitelist: ['http://localhost:3000']
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
