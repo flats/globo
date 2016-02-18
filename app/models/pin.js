@@ -6,5 +6,6 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   user: DS.belongsTo('user'),
   place: DS.belongsTo('place'),
-  createdAt: DS.attr('date')
+  createdAt: DS.attr('date'),
+  destinations: DS.hasMany('destination')
 });

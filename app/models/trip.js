@@ -4,5 +4,6 @@ export default DS.Model.extend({
   name: DS.attr('string'),
   startDate: DS.attr('date'),
   user: DS.belongsTo('user'),
-  createdAt: DS.attr('date')
+  createdAt: DS.attr('date'),
+  destinations: DS.hasMany('destination')
 });
