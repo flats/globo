@@ -1,1 +1,15 @@
+{{#each pins as |pin|}}
+
+  <p>{{pin.nickname}}</p>
+
+{{/each}}
+
+{{#g-map lat=37.7833 lng=-122.4167 zoom=2 as |context|}}
+  {{#each pins as |pin|}}
+    {{g-map-marker context lat=pin.place.lat lng=pin.place.long}}
+  {{/each}}
+{{/g-map}}
+
 {{outlet}}
+
+{{add-pin}}
