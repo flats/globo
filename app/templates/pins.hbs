@@ -1,3 +1,12 @@
+{{#leaflet-map lat=37.7833 lng=-122.4167 zoom=2}}
 
+  {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+  {{#each model as |pin|}}
+    {{#marker-layer location=pin.coords}}
+      <h3>Hotel</h3>
+    {{/marker-layer}}
+  {{/each}}
+  
+{{/leaflet-map}}
 
 {{outlet}}

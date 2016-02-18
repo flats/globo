@@ -14,7 +14,8 @@
     "qunit": "~1.20.0",
     "bootstrap": "~3.3.5",
     "active-model-adapter": "^2.0.3",
-    "torii": "^0.6.1"
+    "torii": "^0.6.1",
+    "leaflet": "~0.7.7"
   },
   "resolutions": {
     "ember": "~2.3.1",
