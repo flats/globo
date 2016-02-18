@@ -20,7 +20,7 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-    ['gmap']: {
+    gmap: {
       key: process.env.GOOGLE_KEY,
     },
     torii: {
