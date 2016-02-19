@@ -7,9 +7,11 @@ export default Ember.Component.extend({
     },
 
     submitTrip(){
-      let trip = this.get('pin');
+      let trip = this.get('trip');
       // place.pin = this.get('pin');
-      trip.save();
+      trip.save().then((savedTrip) => {
+        savedTrip.get('destinations').invoke('save');
+      });
 
     },
 
