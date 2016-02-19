@@ -6,6 +6,7 @@ export default Ember.Component.extend({
       let pin = this.get('pin');
       // place.pin = this.get('pin');
       pin.save();
+
     }
   }
 });
