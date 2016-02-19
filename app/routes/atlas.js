@@ -6,15 +6,10 @@ export default Ember.Route.extend({
       trips: this.store.findAll('trip'),
       pins: this.store.findAll('pin'),
       places:this.store.findAll('place'),
+        // adding new, single pin
       newPin: this.store.createRecord('pin'),
-      newPlace: this.store.createRecord('place')
+       // adding new trip with multiple pins
+      newTrip: this.store.createRecord('trip')
     });
   }
-  // actions:{
-  //   addPin(){
-  //     let pin = this.modelFor((this.routeName).newPin);
-  //     pin.save();
-  //   }
-  // }
-
 });

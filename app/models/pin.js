@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+// import Ember from 'ember';
 
 export default DS.Model.extend({
   nickname: DS.attr('string'),
@@ -8,5 +9,12 @@ export default DS.Model.extend({
   place: DS.belongsTo('place'),
   createdAt: DS.attr('date'),
   destinations: DS.hasMany('destination'),
-  coords: DS.attr('')
+  lat: DS.attr('number'),
+  long: DS.attr('number'),
+
+  // coords: Ember.computed('lat', 'long', function(){
+  //   return [this.get('lat'), this.get('long')];
+  // })
+
+
 });
