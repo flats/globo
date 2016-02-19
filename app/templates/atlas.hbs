@@ -1,4 +1,4 @@
-{{#each model.pins as |pin|}}
+<!-- {{#each model.pins as |pin|}}
 
   <p>{{pin.nickname}}</p>
 
@@ -8,7 +8,18 @@
   {{#each model.pins as |pin|}}
     {{g-map-marker context lat=pin.place.lat lng=pin.place.long}}
   {{/each}}
-{{/g-map}}
+{{/g-map}} -->
+{{#leaflet-map lat=lat lng=lng zoom=zoom}}
+
+  {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+  {{#each model.pins as |pin|}}
+        <!-- turn cords into array? -->
+    {{#marker-layer location=pin.coords}}
+      <h3>Hotel</h3>
+    {{/marker-layer}}
+  {{/each}}
+
+{{/leaflet-map}}
 
 {{outlet}}
 
