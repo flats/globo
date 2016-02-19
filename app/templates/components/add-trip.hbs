@@ -1,12 +1,22 @@
 <strong>Add a trip</strong>
 <form class="form-horizontal" {{action "submitTrip" on="submit"}}>
+  {{input value=trip.name id="trip-name" placeholder="Name your trip?"}}
+  {{input value=trip.startDate  id="trip-startDate" placeholder="When?"}}
 
-  {{input value=pin.nickname id="pin-nickname" placeholder="Where?"}}
-  {{input value=pin.startDate  id="pin-startDate" placeholder="When?"}}
-  {{input value=pin.description  id="pin-description" placeholder="Tell us about it"}}
-  <!-- Will change to geocode -->
-  {{input value=pin.lat  id="place-lat" placeholder="Latitude?"}}
-  {{input value=pin.long  id="place-long" placeholder="Longitude?"}}
+  <button type="button" name="button" {{action "addDestination"}}>Add a destination</button>
+    {{#each trip.destinations as |destination|}}
+      <div class="form-group">
+        {{input value=destination.nickname placeholder="Where?"}}
+        {{input value=destination.startDate  placeholder="When?"}}
+        {{input value=destination.description  placeholder="Tell us about it"}}
+        <!-- Will change to geocode -->
+        {{input value=destination.lat  placeholder="Latitude?"}}
+        {{input value=destination.long  placeholder="Longitude?"}}
+      </div>
+    {{/each}}
+
+
+
 
 
   <button type="submit" class="btn btn-primary"></button>
@@ -14,5 +24,5 @@
 <br><br>
 
 
-<!-- Need to do ability to add additional pins -->
+<!-- Need to do ability to add additional pins THROUGH destination -->
 <!-- how to create as many pins as I need? -->

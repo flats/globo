@@ -14,6 +14,7 @@
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
   {{#each model.pins as |pin|}}
         turn cords into array? not really working
+        can't assign coords in template...
     {{#marker-layer location=[40,70]}}
       <h3>Hotel</h3>
     {{/marker-layer}}
@@ -24,4 +25,4 @@
 {{outlet}}
 
 {{add-pin pin=model.newPin}}
-{{add-trip pin=model.newPin trip=model.newTrip}}
+{{add-trip trip=model.newTrip addDestination=(action "addDestination")}}
