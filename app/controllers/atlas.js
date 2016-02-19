@@ -5,14 +5,25 @@ export default Ember.Controller.extend({
   lat: 0,
   lng: 0,
   zoom: 2,
-
+  addState: true,
   actions:{
     addDestination(){
       let trip = this.get('model.newTrip');
       let destination = this.store.createRecord('destination');
-      //why u made bro
-      // debugger;
       trip.get('destinations').addObject(destination);
+    },
+    addPoint(e) {
+      if(this.get('addState')) {
+        this.send('createPin', e);
+        return true;
+      } else {
+        // e.target.doubleClickZoom.enable();
+        // this.set('addState', true);
+      }
+    },
+    delete(pin) {
+      pin.destroyRecord();
+      pin.save();
     }
   }
 });
