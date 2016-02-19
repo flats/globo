@@ -1,0 +1,18 @@
+<strong>Add a trip</strong>
+<form class="form-horizontal" {{action "submitTrip" on="submit"}}>
+
+  {{input value=pin.nickname id="pin-nickname" placeholder="Where?"}}
+  {{input value=pin.startDate  id="pin-startDate" placeholder="When?"}}
+  {{input value=pin.description  id="pin-description" placeholder="Tell us about it"}}
+  <!-- Will change to geocode -->
+  {{input value=pin.lat  id="place-lat" placeholder="Latitude?"}}
+  {{input value=pin.long  id="place-long" placeholder="Longitude?"}}
+
+
+  <button type="submit" class="btn btn-primary"></button>
+</form>
+<br><br>
+
+
+<!-- Need to do ability to add additional pins -->
+<!-- how to create as many pins as I need? -->

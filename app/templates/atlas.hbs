@@ -1,4 +1,4 @@
-<!-- {{#each model.pins as |pin|}}
+{{#each model.pins as |pin|}}
 
   <p>{{pin.nickname}}</p>
 
@@ -8,19 +8,20 @@
   {{#each model.pins as |pin|}}
     {{g-map-marker context lat=pin.place.lat lng=pin.place.long}}
   {{/each}}
-{{/g-map}} -->
-{{#leaflet-map lat=lat lng=lng zoom=zoom}}
+{{/g-map}}
+<!-- {{#leaflet-map lat=lat lng=lng zoom=zoom}}
 
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
   {{#each model.pins as |pin|}}
-        <!-- turn cords into array? not really working -->
+        turn cords into array? not really working
     {{#marker-layer location=[40,70]}}
       <h3>Hotel</h3>
     {{/marker-layer}}
   {{/each}}
 
-{{/leaflet-map}}
+{{/leaflet-map}} -->
 
 {{outlet}}
 
 {{add-pin pin=model.newPin}}
+{{add-trip pin=model.newPin trip=model.newTrip}}
