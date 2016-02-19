@@ -1,5 +1,18 @@
 @import "bootstrap";
 
+h2#title {
+    background: transparent url("/globo.png") top left no-repeat;
+    background-size: 100px;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 0;
+    display: inline-block;
+    overflow: hidden;
+    height: 100px;
+    padding-left: 100px;
+}
+
 .g-map-canvas {
   width: 1000px;
   height: 500px;
