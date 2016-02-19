@@ -8,5 +8,7 @@ export default DS.Model.extend({
   place: DS.belongsTo('place'),
   createdAt: DS.attr('date'),
   destinations: DS.hasMany('destination'),
-  coords: DS.attr('')
+  // coords: DS.attr(''),
+  lat: DS.attr('number'),
+  long: DS.attr('number')
 });
