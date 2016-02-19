@@ -1,9 +1,9 @@
 <h2 id="title">Welcome to Globo</h2>
 
   {{#if session.isAuthenticated}}
-    <li>Logout</li>
+    <li><button class='btn' {{action "logout"}}> Log Out</button></li>
     {{else}}
-    <li>Login</li>
+    <li>{{link-to "Login" login}}</li>
   {{/if}}
 
 {{outlet}}
