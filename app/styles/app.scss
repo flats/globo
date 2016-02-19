@@ -11,6 +11,7 @@ h2#title {
     overflow: hidden;
     height: 100px;
     padding-left: 100px;
+    z-index: 1;
 }
 
 .g-map-canvas {
@@ -21,7 +22,9 @@ h2#title {
 .leaflet-container {
     height: 100vh;
     width: 100vw;
-    z-index: -1;
+    // height: 500px;
+    // width: 500px;
+    // z-index: -1;
     // height: 100px;
     // width: 100px;
     // position: absolute;
