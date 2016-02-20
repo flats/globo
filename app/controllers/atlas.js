@@ -13,14 +13,13 @@ export default Ember.Controller.extend({
       trip.get('destinations').addObject(destination);
     },
     addPinMode() {
-      this.set('addState', true);
+      this.toggleProperty('addState');
       // $('.leaflet-map-pane').doubleClickZoom.disable();
     },
     addPoint(e) {
       if(this.get('addState')) {
         this.send('createPin', e);
         // e.target.doubleClickZoom.enable();
-        this.set('addState', false);
         return true;
       }
     },
