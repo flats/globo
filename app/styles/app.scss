@@ -4,8 +4,8 @@ h2#title {
     background: transparent url("/globo-drop-shadow.png") top left no-repeat;
     background-size: 100px;
     position: absolute;
-    top: 0;
-    right: 20px;
+    top: -15px;
+    right: 10px;
     width: 0;
     display: inline-block;
     overflow: hidden;
@@ -30,4 +30,30 @@ h2#title {
     // position: absolute;
     // top: 0;
     // right: 0;
+}
+
+#add-pin-wrapper {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#add-pin {
+    float: left;
+    margin: 0 0 10px 10px;
+}
+
+#add-pin.active a {
+    background-color: #f4f4f4;
+    color: red;
+}
+
+#add-pin a {
+    width: 90px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: blue;
 }

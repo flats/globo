@@ -9,27 +9,27 @@
     {{g-map-marker context lat=pin.place.lat lng=pin.place.long}}
   {{/each}}
 {{/g-map}} -->
-<!-- {{#leaflet-map lat=lat lng=lng zoom=zoom}}
+{{#leaflet-map lat=lat lng=lng zoom=zoom doubleClickZoom=false onDblclick=(action "addPoint")}}
 
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
   {{#each model.pins as |pin|}}
-    {{#marker-layer location=pin.coords}}
+    {{#marker-layer lat=pin.lat lng=pin.long}}
       <h3>Hotel</h3>
+      <h6 {{action 'deletePin' pin}}>Delete this Pin</h6>
     {{/marker-layer}}
   {{/each}}
 
-{{/leaflet-map}} -->
+{{/leaflet-map}}
 
-
- <!-- NEED TO DEFINE LAT AND LONG -->
-{{#each model.pins as |pin|}}
-  {{pin.nickname}}
-  {{pin.lat}}
-  {{pin.long}}
-{{/each}}
-
+<div id="add-pin-wrapper">
+  <div id="add-pin" class="leaflet-bar {{if addState "active"}}">
+    <a href="#" {{action 'addPinMode'}}>Add a pin</a>
+  </div>
+</div>
 
 {{outlet}}
 
-{{add-pin pin=model.newPin}}
-{{add-trip trip=model.newTrip addDestination=(action "addDestination")}}
+{{!newPin}}
+
+{{!add-pin pin=newPin}}
+{{!add-trip trip=model.newTrip addDestination=(action "addDestination")}}
