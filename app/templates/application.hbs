@@ -1,7 +1,7 @@
 <h2 id="title">Welcome to Globo</h2>
 
   {{#if session.isAuthenticated}}
-    {{currentUser.name}}
+    {{session.currentUser.email}}
       <li><button class='btn' {{action "logout"}}> Log Out</button></li>
       {{else}}
       <li>{{link-to 'Log In' 'login'}}</li>

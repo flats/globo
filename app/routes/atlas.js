@@ -1,8 +1,9 @@
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
-import CurrentUserHelper from '../helpers/current-user-helper';
+// import CurrentUserHelper from '../helpers/current-user-helper';
 
-export default Ember.Route.extend(AuthenticatedRouteMixin,CurrentUserHelper,{
+export default Ember.Route.extend(AuthenticatedRouteMixin,{
+  session: Ember.inject.service('session'),
   model() {
     return {
       trips: this.store.findAll('trip'),
@@ -12,7 +13,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,CurrentUserHelper,{
       newPin: this.store.createRecord('pin'),
        // adding new trip with multiple pins
       newTrip: this.store.createRecord('trip'),
-      currentGluser: this.get('currentUser')
+      // currentGluser: this.get('currentUser')
     };
   }
 });
