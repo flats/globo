@@ -21,9 +21,15 @@
 
 {{/leaflet-map}}
 
+<div id="add-pin-wrapper">
+  <div id="add-pin" class="leaflet-bar {{if addState "active"}}">
+    <a href="#" {{action 'addPinMode'}}>Add a pin</a>
+  </div>
+</div>
+
 {{outlet}}
 
-{{newPin}}
+{{!newPin}}
 
-{{add-pin pin=newPin}}
+{{!add-pin pin=newPin}}
 {{!add-trip trip=model.newTrip addDestination=(action "addDestination")}}
