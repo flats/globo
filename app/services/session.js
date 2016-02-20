@@ -2,6 +2,7 @@ import Ember from 'ember';
 import ESASession from "ember-simple-auth/services/session";
 
 export default ESASession.extend({
+  session: Ember.inject.service('session'),
   store: Ember.inject.service(),
 
   setCurrentUser: function() {
