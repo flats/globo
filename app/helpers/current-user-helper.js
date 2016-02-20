@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.CurrentUserHelper = {
   beforeModel: function() {
     if (!this.controllerFor('application').get('currentUser')) {
-      var auth_deferred = $.get('/');
+      var auth_deferred = $.get('http://localhost:3000/users');
 
       auth_deferred.then(function(user) {
         this.controllerFor('application').set('currentUser', user);

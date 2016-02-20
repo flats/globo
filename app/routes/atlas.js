@@ -12,7 +12,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,CurrentUserHelper,{
       newPin: this.store.createRecord('pin'),
        // adding new trip with multiple pins
       newTrip: this.store.createRecord('trip'),
-      currentUser: this.get('currentUser')
+      currentGluser: this.get('currentUser')
     };
   }
 });
