@@ -8,12 +8,21 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
     return {
       trips: this.store.findAll('trip'),
       pins: this.store.findAll('pin'),
-      places:this.store.findAll('place'),
+      places: this.store.findAll('place'),
         // adding new, single pin
-      newPin: this.store.createRecord('pin'),
+      // newPin: this.store.createRecord('pin'),
        // adding new trip with multiple pins
-      newTrip: this.store.createRecord('trip'),
-      // currentGluser: this.get('currentUser')
+
+      newTrip: this.store.createRecord('trip')
     };
+  },
+  actions: {
+    createPin(e) {
+      this.set('newPin', this.store.createRecord('pin', {
+        lat: e.latlng.lat,
+        long: e.latlng.lng
+      }));
+      this.get('newPin').save();
+    }
   }
 });

@@ -5,14 +5,27 @@ export default Ember.Controller.extend({
   lat: 0,
   lng: 0,
   zoom: 2,
-
+  addState: false,
   actions:{
     addDestination(){
       let trip = this.get('model.newTrip');
       let destination = this.store.createRecord('destination');
-      //why u made bro
-      // debugger;
       trip.get('destinations').addObject(destination);
+    },
+    addPinMode() {
+      this.toggleProperty('addState');
+      // $('.leaflet-map-pane').doubleClickZoom.disable();
+    },
+    addPoint(e) {
+      if(this.get('addState')) {
+        this.send('createPin', e);
+        // e.target.doubleClickZoom.enable();
+        return true;
+      }
+    },
+    deletePin(pin) {
+      pin.deleteRecord();
+      pin.save();
     }
   }
 });
