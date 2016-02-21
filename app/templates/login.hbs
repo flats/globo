@@ -1,0 +1,10 @@
+<form {{action 'authenticate' on='submit'}}>
+  <label for="identification">Email</label>
+  {{input id='identification' placeholder='Enter Email' value=identification type="email"}}
+  <label for="password">Password</label>
+  {{input id='password' placeholder='Enter Password' type='password' value=password}}
+  <button type="submit">Login</button>
+  {{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+  {{/if}}
+</form>
