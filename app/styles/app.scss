@@ -32,7 +32,7 @@ h2#title {
     // right: 0;
 }
 
-#add-pin-wrapper {
+#add-pin-wrapper, #search-location-wrapper {
     width: 40px;
     height: 40px;
     position: absolute;
@@ -40,9 +40,29 @@ h2#title {
     left: 0;
 }
 
+#search-location-wrapper {
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    padding-bottom: 40px;
+}
+
 #add-pin {
     float: left;
     margin: 0 0 10px 10px;
+}
+
+#search-location {
+    float: right;
+    margin: 0 10px 10px 0;
+}
+
+#search-location form input {
+    width: 260px;
+    padding-left: 4px;
 }
 
 #add-pin.active a {
