@@ -9,8 +9,8 @@ export default Ember.Controller.extend({
   zoom: 2,
   addState: false,
   bounds: (function() {
-    var southWest = L.latLng(40.712, -74.227);
-    var northEast = L.latLng(40.774, -74.125);
+    var southWest = L.latLng(85, -180);
+    var northEast = L.latLng(-85, 180);
     return L.latLngBounds(southWest, northEast);
   })(),
   actions:{
