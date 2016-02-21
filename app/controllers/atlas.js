@@ -6,6 +6,7 @@ export default Ember.Controller.extend({
   lng: 0,
   zoom: 2,
   addState: false,
+  searchQuery: null,
   actions:{
     addDestination(){
       let trip = this.get('model.newTrip');
@@ -22,6 +23,9 @@ export default Ember.Controller.extend({
         // e.target.doubleClickZoom.enable();
         return true;
       }
+    },
+    findLocation() {
+      var query = this.get('searchQuery');
     },
     deletePin(pin) {
       pin.deleteRecord();
