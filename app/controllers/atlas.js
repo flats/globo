@@ -6,6 +6,8 @@ export default Ember.Controller.extend({
   lng: 0,
   zoom: 2,
   addState: false,
+  pastPins: true,
+  futurePins: true,
   actions:{
     addDestination(){
       let trip = this.get('model.newTrip');

@@ -13,10 +13,20 @@
 
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
   {{#each model.pins as |pin|}}
-    {{#marker-layer lat=pin.lat lng=pin.long}}
+
+    {{#if pastPins}}
+    {{#marker-layer lat=pin.lat lng=pin.long }}
       <h3>Hotel</h3>
       <h6 {{action 'deletePin' pin}}>Delete this Pin</h6>
     {{/marker-layer}}
+    {{/if}}
+    {{#if futurePins}}
+    {{#marker-layer lat=pin.lat lng=pin.long }}
+      <h3>Hotel</h3>
+      <h6 {{action 'deletePin' pin}}>Delete this Pin</h6>
+    {{/marker-layer}}
+    {{/if}}
+
   {{/each}}
 
 {{/leaflet-map}}
@@ -32,6 +42,12 @@
     <form id="search-location-form" {{action "findPlace" on="submit"}}>
       {{input action 'findPlace' id="search-location-input" placeholder="Search for a place..."}}
     </form>
+  </div>
+</div>
+
+<div id="filter-pin-wrapper">
+  <div id="filter-pin" class="leaflet-bar {{if addState "active"}}">
+    <a href="#" {{action 'filter'}}>Add a pin</a>
   </div>
 </div>
 
