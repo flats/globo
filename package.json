@@ -38,6 +38,7 @@
     "ember-cli-sri": "^1.2.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "1.13.15",
+    "ember-data-actions": "git+ssh://git@github.com/davewasmer/ember-data-actions.git#f7dacd3638ceef3ef9106863dd84987f0a33e310",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
     "ember-g-map": "0.0.14",
