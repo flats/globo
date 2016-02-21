@@ -4,9 +4,10 @@ export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
   actions: {
     authenticate() {
+      let _this = this;
       const { identification, password } = this.getProperties('identification', 'password');
-      this.get('session').authenticate('authenticator:devise', identification, password).catch((reason) => {
-        this.set('errorMessage', reason.error || reason);
+      this.get('session').authenticate('authenticator:devise', identification, password).then(()=>{
+        _this.transitionTo('/atlas');
       });
     }
   }
