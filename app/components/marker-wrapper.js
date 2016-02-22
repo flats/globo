@@ -2,8 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions: {
-    pinClick() {
-      this.sendAction('pinSmack');
+    pinClick(e) {
+      // debugger;
+      this.sendAction('pinSmack', e);
     },
     savePin(pin){
       this.sendAction('savePin', pin);
