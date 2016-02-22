@@ -51,9 +51,13 @@
   </div>
 </div>
 
+<div class="leaflet-bar {{if filterPast "active"}}">
+  <a href="#" {{action 'filterPast'}}>Show Past Pins</a>
+</div>
 
-<a href="#" {{action 'filterPast'}}>Show Past Pins</a>
-
+<div>
+  <a href="#" {{action 'filterFuture'}}>Show Future Pins</a>
+</div>
 
 {{outlet}}
 

@@ -31,7 +31,9 @@ export default Ember.Controller.extend({
     },
     filterPast() {
       this.toggleProperty('pastPins');
-      // $('.leaflet-map-pane').doubleClickZoom.disable();
+    },
+    filterFuture() {
+      this.toggleProperty('futurePins');
     },
   }
 });
