@@ -1,11 +1,12 @@
 @import "bootstrap";
 
 body {
-    background-color: #f2f4fa;
+    // background-color: #f2f4fa;
+    background-color: #535353;
 }
 
 #login-form {
-    background-color: #fff;
+    background-color: #333333;
     border-radius: 4px;
     margin: 180px auto 0 auto;
     width: 290px;
@@ -14,24 +15,46 @@ body {
     display: block;
     width: 250px;
     margin: 20px;
+    background-color: #535353;
+}
+#login-form input, select, textarea{
+    // color: #ff0000;
+    color: rgb(243,224,74);
 }
 
 #login-form h2 {
     margin: 20px;
+    // color: #FFB627;
+    color: rgb(243,224,74);
     font-weight: normal;
     padding-top: 20px;
+    text-align: center;
 }
 
 #login-form button[type='submit'] {
     margin: 0 0 20px 20px;
     width: 250px;
-    background-color: #255afa;
-    color: #fff;
+    // background-color: #255afa;
+    background-color: rgb(243,224,74);
+    // color: #fff;
+    color: #333333;
+
     letter-spacing: 1px;
 }
 
 #login-form label {
     display: none;
+}
+
+#douche {
+  display: block;
+  width: 250px;
+
+  text-align: center;
+  padding-bottom: 1em;
+  margin: auto;
+  color: rgb(243,224,74);
+  opacity: 0.75;
 }
 
 h2#title {
