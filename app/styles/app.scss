@@ -1,5 +1,39 @@
 @import "bootstrap";
 
+body {
+    background-color: #f2f4fa;
+}
+
+#login-form {
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 180px auto 0 auto;
+    width: 290px;
+}
+#login-form input {
+    display: block;
+    width: 250px;
+    margin: 20px;
+}
+
+#login-form h2 {
+    margin: 20px;
+    font-weight: normal;
+    padding-top: 20px;
+}
+
+#login-form button[type='submit'] {
+    margin: 0 0 20px 20px;
+    width: 250px;
+    background-color: #255afa;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+#login-form label {
+    display: none;
+}
+
 h2#title {
     background: transparent url("/globo-drop-shadow.png") top left no-repeat;
     background-size: 100px;
