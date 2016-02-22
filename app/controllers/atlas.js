@@ -8,6 +8,7 @@ export default Ember.Controller.extend({
   lng: 0,
   zoom: 2,
   addState: false,
+  searchQuery: null,
   bounds: (function() {
     var southWest = L.latLng(85, -180);
     var northEast = L.latLng(-85, 180);
@@ -29,6 +30,14 @@ export default Ember.Controller.extend({
         // e.target.doubleClickZoom.enable();
         return true;
       }
+    },
+    findLocation() {
+      var query = this.get('searchQuery');
+      this.store.adapterFor('model-place').mapSearch(query).then((result) => {
+        this.set('lat', result.lat);
+        this.set('lng', result.long);
+        this.set('zoom', 14);
+      });
     },
     deletePin(pin) {
       pin.deleteRecord();

@@ -30,8 +30,8 @@
 
 <div id="search-location-wrapper">
   <div id="search-location" class="leaflet-bar {{if addState "active"}}">
-    <form id="search-location-form" {{action "findPlace" on="submit"}}>
-      {{input action 'findPlace' id="search-location-input" placeholder="Search for a place..."}}
+    <form id="search-location-form" {{action "findLocation" on="submit"}}>
+      {{input id="search-location-input" value=searchQuery placeholder="Search for a place..."}}
     </form>
   </div>
 </div>
