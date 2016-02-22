@@ -129,6 +129,23 @@ h2#title {
     color: blue;
 }
 
+#pin-title {
+  text-align: center;
+}
+
 #pin-form {}
 
 #pin-field {}
+
+.pin-action {
+  display: inline-block;
+  // text-align: center;
+}
+
+#pin-edit {
+  margin-left: .5em;
+}
+
+#pin-delete {
+  margin-left: 3.5em;
+}

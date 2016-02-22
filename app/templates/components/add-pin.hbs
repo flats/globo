@@ -1,15 +1,33 @@
 
-
-<div class="col-xs-12" id='pin-form'>
-
-  <div class="" id="pin-field">
-    {{input value=pin.nickname id="pin-nickname" placeholder="Where?"}}
+{{#if editState}}
+  <div class="col-xs-12" id='pin-form'>
+    <div class="pin-field">
+      {{input value=pin.nickname id="pin-nickname" placeholder="Where?"}}
+    </div>
+    <div class="pin-field">
+      {{input value=pin.startDate  id="pin-startDate" placeholder="When?"}}
+    </div>
+    <div class="pin-field">
+      {{input value=pin.description  id="pin-description" placeholder="Tell us about it"}}
+    </div>
   </div>
-  <div class="" id="pin-field">
-    {{input value=pin.startDate  id="pin-startDate" placeholder="When?"}}
-  </div>
-  <div class="" id="pin-field">
-    {{input value=pin.description  id="pin-description" placeholder="Tell us about it"}}
+  <div>
+    <h6 class="pin-action" id="pin-edit" {{action 'savePin' pin}}>Edit Pin</h6>
+    <h6 class="pin-action" id="pin-delete" {{action 'deletePin' pin}}>Delete Pin</h6>
   </div>
 
-</div>
+  {{else}}
+
+  <h4 id="pin-title">{{pin.nickname}}</h4>
+  <div class="pin-label">
+    {{pin.startDate}}
+  </div>
+  <div class="pin-label">
+    {{pin.description}}
+  </div>
+
+  <div>
+    <h6 class="pin-action" id="pin-edit" {{action 'savePin' pin}}>Save Pin</h6>
+    <h6 class="pin-action" id="pin-delete" {{action 'deletePin' pin}}>Delete Pin</h6>
+  </div>
+{{/if}}
