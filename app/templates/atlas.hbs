@@ -3,7 +3,6 @@
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" noWrap=true }}
   {{#each model.pins as |pin|}}
 
-
     {{#if pastPins}}
     {{#unless pin.visited}}
       {{#marker-layer lat=pin.lat lng=pin.long }}
@@ -31,7 +30,7 @@
 </div>
 
 <div id="add-trip-wrapper">
-  <div id="add-trip" class="leaflet-bar {{if addState "active"}}">
+  <div id="add-trip" class="leaflet-bar {{if addTripState "active"}}">
     <a href="#" {{action 'addtripMode'}}>Add a Trip</a>
   </div>
 </div>

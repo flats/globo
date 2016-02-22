@@ -13,6 +13,7 @@ export default Ember.Controller.extend({
   lng: 0,
   zoom: 2,
   addState: false,
+  addTripState: false,
   pastPins: true,
   futurePins: true,
   searchQuery: null,
@@ -22,15 +23,21 @@ export default Ember.Controller.extend({
     return L.latLngBounds(southWest, northEast);
   })(),
   actions:{
-    addDestination(){
-      let trip = this.get('model.newTrip');
-      let destination = this.store.createRecord('destination');
-      trip.get('destinations').addObject(destination);
-    },
+    // addDestination(){
+    //   let trip = this.get('model.newTrip');
+    //   let destination = this.store.createRecord('destination');
+    //   trip.get('destinations').addObject(destination);
+    // },
     addPinMode() {
       this.toggleProperty('addState');
       // $('.leaflet-map-pane').doubleClickZoom.disable();
     },
+
+    addTripMode(){
+      this.toggleProperty('addTripState');
+    },
+
+
     addPoint(e) {
       if(this.get('addState')) {
         this.send('createPin', e);
