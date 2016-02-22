@@ -26,6 +26,8 @@ export default Ember.Controller.extend({
     },
     findLocation() {
       var query = this.get('searchQuery');
+      var suggestedPlace = this.store.adapterFor('model-place').mapSearch(query);
+      
     },
     deletePin(pin) {
       pin.deleteRecord();
