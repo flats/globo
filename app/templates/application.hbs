@@ -3,7 +3,7 @@
 <div id="user-legend-wrapper">
   <div id="user-legend" class="leaflet-bar">
   {{#if session.isAuthenticated}}
-    {{session.currentUser.email}}<br>
+    <!-- {{session.currentUser.email}}<br> -->
     <button class='btn' {{action "logout"}}> Log Out</button>
   {{else}}
     {{link-to 'Log In' 'login'}}
