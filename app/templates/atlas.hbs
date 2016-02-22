@@ -1,3 +1,11 @@
+<div class="HAMBONE-CITY">
+
+  {{#each model.trips as |trip|}}
+    <!-- {{polyline-layer locations=trip.pinPoints}} -->
+    <h1>  {{trip.pinPoints}}</h1>
+  {{/each}}
+</div>
+
 {{#leaflet-map lat=lat lng=lng zoom=zoom maxBoundsViscosity=0.0 maxBounds=bounds doubleClickZoom=false minZoom=3 onDblclick=(action "addPoint")}}
 
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" noWrap=true }}
@@ -21,6 +29,9 @@
 
 
   {{/each}}
+
+
+
 {{/leaflet-map}}
 
 <div id="add-pin-wrapper">

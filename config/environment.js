@@ -28,14 +28,14 @@ module.exports = function(environment) {
     gmap: {
       key: process.env.GOOGLE_KEY,
     },
-    torii: {
-      providers: {
-        'facebook-connect': {
-          appId: process.env.FB_KEY,
-          scope: 'email'
-        }
-      }
-    },
+    // torii: {
+    //   providers: {
+    //     'facebook-connect': {
+    //       appId: process.env.FB_KEY,
+    //       scope: 'email'
+    //     }
+    //   }
+    // },
 
     APP: {
       // Here you can pass flags/options to your application instance

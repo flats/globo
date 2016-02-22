@@ -10,6 +10,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
       trips: this.store.findAll('trip'),
       pins: this.store.findAll('pin'),
       places: this.store.findAll('place'),
+      destinations: this.store.findAll('destination'),
         // adding new, single pin
       // newPin: this.store.createRecord('pin'),
        // adding new trip with multiple pins
