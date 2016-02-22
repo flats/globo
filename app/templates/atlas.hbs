@@ -1,15 +1,3 @@
-<!-- {{#each model.pins as |pin|}}
-
-  <p>{{pin.nickname}}</p>
-
-{{/each}}
-
-{{#g-map lat=37.7833 lng=-122.4167 zoom=2 as |context|}}
-  {{#each model.pins as |pin|}}
-    {{g-map-marker context lat=pin.place.lat lng=pin.place.long}}
-  {{/each}}
-{{/g-map}} -->
-
 {{#leaflet-map lat=lat lng=lng zoom=zoom maxBoundsViscosity=0.0 maxBounds=bounds doubleClickZoom=false minZoom=3 onDblclick=(action "addPoint")}}
 
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" noWrap=true }}
@@ -35,8 +23,3 @@
 </div>
 
 {{outlet}}
-
-{{!newPin}}
-
-{{!add-pin pin=newPin}}
-{{!add-trip trip=model.newTrip addDestination=(action "addDestination")}}
