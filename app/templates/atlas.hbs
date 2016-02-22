@@ -23,9 +23,9 @@
 
   {{/each}}
   
+  <!-- map trips -->
   {{#each model.trips as |trip|}}
     {{polyline-layer locations=trip.pinPoints}}
-    <!-- <h1>  {{trip.pinPoints}}</h1> -->
   {{/each}}
 
 

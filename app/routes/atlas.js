@@ -10,8 +10,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
       trips: this.store.findAll('trip'),
       pins: this.store.findAll('pin'),
       places: this.store.findAll('place'),
-
-      // causing errors
       destinations: this.store.findAll('destination'),
     };
   },
