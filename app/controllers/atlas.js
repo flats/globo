@@ -36,7 +36,7 @@ export default Ember.Controller.extend({
       this.store.adapterFor('model-place').mapSearch(query).then((result) => {
         this.set('lat', result.lat);
         this.set('lng', result.long);
-        this.set('zoom', 11);
+        this.set('zoom', 14);
       });
     },
     deletePin(pin) {
