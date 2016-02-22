@@ -1,5 +1,39 @@
 @import "bootstrap";
 
+body {
+    background-color: #f2f4fa;
+}
+
+#login-form {
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 180px auto 0 auto;
+    width: 290px;
+}
+#login-form input {
+    display: block;
+    width: 250px;
+    margin: 20px;
+}
+
+#login-form h2 {
+    margin: 20px;
+    font-weight: normal;
+    padding-top: 20px;
+}
+
+#login-form button[type='submit'] {
+    margin: 0 0 20px 20px;
+    width: 250px;
+    background-color: #255afa;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+#login-form label {
+    display: none;
+}
+
 h2#title {
     background: transparent url("/globo-drop-shadow.png") top left no-repeat;
     background-size: 100px;
@@ -40,6 +74,14 @@ h2#title {
     left: 0;
 }
 
+#user-legend-wrapper {
+    position: absolute;
+    top: 120px;
+    right: 10px;
+    z-index: 1;
+    background-color: transparent;
+}
+
 #search-location-wrapper {
     width: 40px;
     height: 30px;
@@ -58,6 +100,15 @@ h2#title {
 #search-location {
     float: right;
     margin: 0 10px 10px 0;
+}
+
+#user-legend {
+    float: right;
+    background-color: #fff;
+}
+
+#user-legend ul {
+    list-style: none;
 }
 
 #search-location form input {

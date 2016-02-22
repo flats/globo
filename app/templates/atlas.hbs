@@ -9,6 +9,7 @@
     {{g-map-marker context lat=pin.place.lat lng=pin.place.long}}
   {{/each}}
 {{/g-map}} -->
+
 {{#leaflet-map lat=lat lng=lng zoom=zoom maxBoundsViscosity=0.0 maxBounds=bounds doubleClickZoom=false minZoom=3 onDblclick=(action "addPoint")}}
 
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" noWrap=true }}

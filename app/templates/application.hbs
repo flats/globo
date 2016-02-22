@@ -1,10 +1,14 @@
 <h2 id="title">Welcome to Globo</h2>
 
+<div id="user-legend-wrapper">
+  <div id="user-legend" class="leaflet-bar">
   {{#if session.isAuthenticated}}
-    {{session.currentUser.email}}
-      <li><button class='btn' {{action "logout"}}> Log Out</button></li>
-      {{else}}
-      <li>{{link-to 'Log In' 'login'}}</li>
+    {{session.currentUser.email}}<br>
+    <button class='btn' {{action "logout"}}> Log Out</button>
+  {{else}}
+    {{link-to 'Log In' 'login'}}
   {{/if}}
+  </div>
+</div>
 
 {{outlet}}
