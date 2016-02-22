@@ -10,11 +10,9 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
       trips: this.store.findAll('trip'),
       pins: this.store.findAll('pin'),
       places: this.store.findAll('place'),
+
+      // causing errors
       destinations: this.store.findAll('destination'),
-        // adding new, single pin
-      // newPin: this.store.createRecord('pin'),
-       // adding new trip with multiple pins
-      // newTrip: this.store.createRecord('trip')
     };
   },
   actions: {
@@ -26,8 +24,9 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
       this.get('newPin').save();
     },
 
-    linkPin(e){
+    linkPin(pin){
       //only create trip on first pin click...
+      debugger;
       if (!this.get('firstClick')){
         this.toggleProperty('firstClick');
         this.set('newTrip', this.store.createRecord('trip'));
@@ -36,10 +35,10 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
       //get the 'trip', create new destination, get the pin w/ attrs
       let trip = this.get('newTrip');
       let destination = this.set('newDestination', this.store.createRecord('destination'));
-      let pin = this.get('pin', e);
+      let pinnah = this.get('pin', pin);
 
       //assign the destination the pin (belongs to)
-      destination.pin = this.get(pin);
+      destination.pin = this.get(pinnah);
 
       //push the destination into the trip
       trip.destinations.pushObject(destination);

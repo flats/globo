@@ -1,9 +1,6 @@
 <div class="HAMBONE-CITY">
 
-  {{#each model.trips as |trip|}}
-    <!-- {{polyline-layer locations=trip.pinPoints}} -->
-    <h1>  {{trip.pinPoints}}</h1>
-  {{/each}}
+
 </div>
 
 {{#leaflet-map lat=lat lng=lng zoom=zoom maxBoundsViscosity=0.0 maxBounds=bounds doubleClickZoom=false minZoom=3 onDblclick=(action "addPoint")}}
@@ -25,7 +22,11 @@
 
 
   {{/each}}
-
+  
+  {{#each model.trips as |trip|}}
+    {{polyline-layer locations=trip.pinPoints}}
+    <!-- <h1>  {{trip.pinPoints}}</h1> -->
+  {{/each}}
 
 
 {{/leaflet-map}}
@@ -38,7 +39,7 @@
 
 <div id="add-trip-wrapper">
   <div id="add-trip" class="leaflet-bar {{if addTripState "active"}}">
-    <a href="#" {{action 'addtripMode'}}>Add a Trip</a>
+    <a href="#" {{action 'addTripMode'}}>Add a Trip</a>
   </div>
 </div>
 

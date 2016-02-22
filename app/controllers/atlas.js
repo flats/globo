@@ -24,11 +24,7 @@ export default Ember.Controller.extend({
     return L.latLngBounds(southWest, northEast);
   })(),
   actions:{
-    // addDestination(){
-    //   let trip = this.get('model.newTrip');
-    //   let destination = this.store.createRecord('destination');
-    //   trip.get('destinations').addObject(destination);
-    // },
+
     addPinMode() {
       this.toggleProperty('addState');
       // $('.leaflet-map-pane').doubleClickZoom.disable();
@@ -37,14 +33,6 @@ export default Ember.Controller.extend({
 
     addTripMode(){
       this.toggleProperty('addTripState');
-    },
-
-    addTripPoint(e) {
-      if(this.get('addTripState')) {
-        this.send('linkPin', e);
-        // e.target.doubleClickZoom.enable();
-        return true;
-      }
     },
 
     //add click listener when tripMode is true

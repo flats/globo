@@ -13,7 +13,9 @@ export default DS.Model.extend({
   pinPoints: Ember.computed('destinations', function(){
     let locationArray = [];
     this.get('destinations').forEach(function(destination){
-      let coords = L.latLng(destination.pin.lat, destination.pin.long);
+      // debugger;
+      let pin = destination.get('pin');
+      let coords = L.latLng(pin.get('lat'), pin.get('long'));
       locationArray.push(coords);
       // locationArray.push(destination);
     });
