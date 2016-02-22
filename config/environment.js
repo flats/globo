@@ -20,7 +20,10 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
+    'ember-simple-auth': {
+      routeAfterAuthentication: 'atlas',
+      routeIfAlreadyAuthenticated: 'atlas'
+    },
 
     gmap: {
       key: process.env.GOOGLE_KEY,
