@@ -59,15 +59,15 @@ body {
 
 h2#title {
     background: transparent url("/globo-drop-shadow.png") top left no-repeat;
-    background-size: 100px;
+    background-size: 175px;
     position: absolute;
     top: -15px;
     right: 10px;
     width: 0;
     display: inline-block;
     overflow: hidden;
-    height: 100px;
-    padding-left: 100px;
+    height: 175px;
+    padding-left: 175px;
     z-index: 1;
 }
 
@@ -89,18 +89,6 @@ h2#title {
     // right: 0;
 }
 
-#add-pin-wrapper, #search-location-wrapper, #add-trip-wrapper {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-#add-trip-wrapper {
-  bottom: 40px;
-}
-
 #user-legend-wrapper {
     position: absolute;
     top: 120px;
@@ -109,55 +97,39 @@ h2#title {
     background-color: transparent;
 }
 
+#nav-btn-group {
+  display: block;
+  bottom: 10px;
+
+  left: 10px;
+  width: 6.5em;
+  position: absolute;
+}
+
+#nav-btn-group a {
+  width:inherit;
+  margin-bottom: 5px;
+}
+
+#add-trip.active a, #add-pin.active a, #filter-button-future.active a, #filter-button-past.active a {
+    background-color: #f4f4f4;
+    color: red;
+}
+
+#add-trip a, #add-pin a, #filter-button-future a, #filter-button-past a {
+    width: 90px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: blue;
+}
+
 #search-location-wrapper {
     width: 40px;
-    height: 30px;
+    height: 40px;
     position: absolute;
     bottom: 0;
     right: 0;
-    left: auto;
-    padding-bottom: 40px;
-}
-
-.filter-button-wrapper {
-    width: 120px;
-    height: 30px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding-bottom: 120px;
-        z-index: 1;
-}
-
-#future-wrapper{
-  bottom:120px;
-}
-
-#past-wrapper{
-  bottom:60px;
-}
-
-#filter-button-past {
-    // float: left;
-    // margin: 0 0 10px 10px;
-    left:50px;
-}
-
-#filter-button-future {
-    // float: left;
-    left:200px;
-}
-
-
-#add-pin {
-    float: left;
-    margin: 0 0 10px 10px;
-}
-
-#add-trip {
-    float: left;
-    margin: 0 0 10px 10px;
-
 }
 
 #search-location {
@@ -179,18 +151,7 @@ h2#title {
     padding-left: 4px;
 }
 
-#add-pin.active a {
-    background-color: #f4f4f4;
-    color: red;
-}
 
-#add-pin a {
-    width: 90px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: blue;
-}
 
 #pin-title {
   text-align: center;
