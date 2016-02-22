@@ -1,5 +1,6 @@
 /* globals L: false */
 import Ember from 'ember';
+import MarkerLayerComponent from 'ember-leaflet/components/marker-layer';
 
 const INITIAL_ZOOM = 2;
 const SW_MAP_EDGE_X = 85;
@@ -13,6 +14,7 @@ export default Ember.Controller.extend({
   lng: 0,
   zoom: 2,
   addState: false,
+  addTripState: true,
   pastPins: true,
   futurePins: true,
   searchQuery: null,
@@ -30,6 +32,13 @@ export default Ember.Controller.extend({
     addPinMode() {
       this.toggleProperty('addState');
       // $('.leaflet-map-pane').doubleClickZoom.disable();
+    },
+    pinClick(e) {
+      if(this.get('addTripState')) {
+        debugger;
+      } else {
+        return false;
+      }
     },
     addPoint(e) {
       if(this.get('addState')) {
