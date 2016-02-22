@@ -15,17 +15,23 @@
   {{#each model.pins as |pin|}}
 
     {{#if pastPins}}
+    {{#unless pin.visited}}
     {{#marker-layer lat=pin.lat lng=pin.long }}
       <h3>Hotel</h3>
       <h6 {{action 'deletePin' pin}}>Delete this Pin</h6>
     {{/marker-layer}}
+    {{/unless}}
     {{/if}}
+
     {{#if futurePins}}
+    {{#if pin.visited}}
     {{#marker-layer lat=pin.lat lng=pin.long }}
       <h3>Hotel</h3>
       <h6 {{action 'deletePin' pin}}>Delete this Pin</h6>
     {{/marker-layer}}
     {{/if}}
+    {{/if}}
+
 
   {{/each}}
 
@@ -45,11 +51,9 @@
   </div>
 </div>
 
-<div id="filter-pin-wrapper">
-  <div id="filter-pin" class="leaflet-bar {{if addState "active"}}">
-    <a href="#" {{action 'filter'}}>Add a pin</a>
-  </div>
-</div>
+
+<a href="#" {{action 'filterPast'}}>Show Past Pins</a>
+
 
 {{outlet}}
 

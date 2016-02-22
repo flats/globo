@@ -28,6 +28,10 @@ export default Ember.Controller.extend({
     deletePin(pin) {
       pin.deleteRecord();
       pin.save();
-    }
+    },
+    filterPast() {
+      this.toggleProperty('pastPins');
+      // $('.leaflet-map-pane').doubleClickZoom.disable();
+    },
   }
 });
