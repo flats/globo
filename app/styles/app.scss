@@ -1,5 +1,62 @@
 @import "bootstrap";
 
+body {
+    // background-color: #f2f4fa;
+    background-color: #535353;
+}
+
+#login-form {
+    background-color: #333333;
+    border-radius: 4px;
+    margin: 180px auto 0 auto;
+    width: 290px;
+}
+#login-form input {
+    display: block;
+    width: 250px;
+    margin: 20px;
+    background-color: #535353;
+}
+#login-form input, select, textarea{
+    // color: #ff0000;
+    color: rgb(243,224,74);
+}
+
+#login-form h2 {
+    margin: 20px;
+    // color: #FFB627;
+    color: rgb(243,224,74);
+    font-weight: normal;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#login-form button[type='submit'] {
+    margin: 0 0 20px 20px;
+    width: 250px;
+    // background-color: #255afa;
+    background-color: rgb(243,224,74);
+    // color: #fff;
+    color: #333333;
+
+    letter-spacing: 1px;
+}
+
+#login-form label {
+    display: none;
+}
+
+#douche {
+  display: block;
+  width: 250px;
+
+  text-align: center;
+  padding-bottom: 1em;
+  margin: auto;
+  color: rgb(243,224,74);
+  opacity: 0.75;
+}
+
 h2#title {
     background: transparent url("/globo-drop-shadow.png") top left no-repeat;
     background-size: 100px;
@@ -38,6 +95,14 @@ h2#title {
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+#user-legend-wrapper {
+    position: absolute;
+    top: 120px;
+    right: 10px;
+    z-index: 1;
+    background-color: transparent;
 }
 
 #search-location-wrapper {
@@ -86,6 +151,15 @@ h2#title {
     margin: 0 10px 10px 0;
 }
 
+#user-legend {
+    float: right;
+    background-color: #fff;
+}
+
+#user-legend ul {
+    list-style: none;
+}
+
 #search-location form input {
     width: 260px;
     padding-left: 4px;
@@ -102,4 +176,31 @@ h2#title {
     text-transform: uppercase;
     letter-spacing: 1px;
     color: blue;
+}
+
+#pin-title {
+  text-align: center;
+}
+
+#pin-form {}
+
+#pin-field {}
+
+.pin-action {
+  display: inline-block;
+  // text-align: center;
+}
+
+#pin-save {
+  margin-left: 4.5em;
+  text-align: center;
+
+}
+
+#pin-edit {
+  margin-left: .5em;
+}
+
+#pin-delete {
+  margin-left: 3.5em;
 }

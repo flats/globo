@@ -1,0 +1,15 @@
+<div id="login-form" class="leaflet-bar">
+  <h2>Sign in</h2>
+  <form {{action 'authenticate' on='submit'}}>
+    <label for="identification">Email</label>
+    {{input id='identification' placeholder='Enter Email' value=identification type="email" class="form-control"}}
+    <label for="password">Password</label>
+    {{input id='password' placeholder='Enter Password' type='password' value=password class="form-control"}}
+    <button type="submit" class="btn">Login</button>
+    <em id="douche">Want to join us? Request an invite.</em>
+
+    {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>

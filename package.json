@@ -43,6 +43,7 @@
     "ember-export-application-global": "^1.0.4",
     "ember-g-map": "0.0.14",
     "ember-leaflet": "2.1.2",
+    "ember-simple-auth": "1.0.1",
     "torii": "^0.6.1"
   }
 }

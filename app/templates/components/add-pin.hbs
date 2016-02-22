@@ -1,13 +1,34 @@
-<strong>Add a pin</strong>
-<form class="form-horizontal" {{action "submitPin" on="submit"}}>
-  {{input value=pin.nickname id="pin-nickname" placeholder="Where?"}}
-  {{input value=pin.startDate  id="pin-startDate" placeholder="When?"}}
-  {{input value=pin.description  id="pin-description" placeholder="Tell us about it"}}
-  <!-- Will change to geocode -->
-  {{input value=pin.lat  id="place-lat" placeholder="Latitude?"}}
-  {{input value=pin.long  id="place-long" placeholder="Longitude?"}}
 
+{{#if editState}}
+  <div class="col-xs-12" id='pin-form'>
+    <div class="pin-field">
+      {{input value=pin.nickname id="pin-nickname" placeholder="Where?"}}
+    </div>
+    <div class="pin-field">
+      {{input value=pin.startDate  id="pin-startDate" placeholder="When?"}}
+    </div>
+    <div class="pin-field">
+      {{input value=pin.description  id="pin-description" placeholder="Tell us about it"}}
+    </div>
+  </div>
+  <div>
+    <h6 class="pin-action" id="pin-save" {{action 'savePin' pin}}>Save Pin</h6>
+  </div>
 
-  <button type="submit" class="btn btn-primary"></button>
-</form>
-<br><br>
+  {{else}}
+
+  <h4 id="pin-title">{{pin.nickname}}</h4>
+  {{#if pin.startDate}}
+  <div class="pin-label">
+    <strong>Date:</strong> {{pin.startDate}}
+  </div>
+  {{/if}}
+  <div class="pin-label">
+    {{pin.description}}
+  </div>
+
+  <div>
+    <h6 class="pin-action" id="pin-edit" {{action 'editPin' pin}}>Edit Pin</h6>
+    <h6 class="pin-action" id="pin-delete" {{action 'deletePin' pin}}>Delete Pin</h6>
+  </div>
+{{/if}}
