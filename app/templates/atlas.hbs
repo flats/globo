@@ -18,13 +18,13 @@
 
     {{#if pastPins}}
     {{#unless pin.visited}}
-      {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin)}}
+      {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin) editPin='editPin' savePin='savePin' deletePin='deletePin'}}
     {{/unless}}
     {{/if}}
 
     {{#if futurePins}}
     {{#if pin.visited}}
-      {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin)}}
+      {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin) editPin='editPin' savePin='savePin' deletePin='deletePin'}}
     {{/if}}
     {{/if}}
 
