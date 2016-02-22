@@ -6,9 +6,7 @@ export default Ember.Controller.extend({
     authenticate() {
       let _this = this;
       const { identification, password } = this.getProperties('identification', 'password');
-      this.get('session').authenticate('authenticator:devise', identification, password).then(() => {
-        _this.transitionToRoute('/atlas');
-      });
+      this.get('session').authenticate('authenticator:devise', identification, password);
     }
   }
 });

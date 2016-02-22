@@ -8,7 +8,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('pins');
   this.route('atlas');
-  this.route('login');
+  this.route('login', { path: '/' });
 });
 
 export default Router;
