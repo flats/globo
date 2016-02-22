@@ -4,7 +4,7 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 
 export default Ember.Route.extend(AuthenticatedRouteMixin,{
   session: Ember.inject.service('session'),
-  clicked: false,
+  firstClick: false,
   model() {
     return {
       trips: this.store.findAll('trip'),
@@ -26,17 +26,29 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
     },
 
     linkPin(e){
-      if (!this.get('clicked')){
-        //only create trip on first pin click...
-        this.toggleProperty('clicked');
+      //only create trip on first pin click...
+      if (!this.get('firstClick')){
+        this.toggleProperty('firstClick');
         this.set('newTrip', this.store.createRecord('trip'));
       }
-      //get the 'trip'...new or existing?
-      this.get('newTrip');
-      // for each pin clicked (e?), create destination and push object into trip.destinations
+
+      //get the 'trip', create new destination, get the pin w/ attrs
+      let trip = this.get('newTrip');
+      let destination = this.set('newDestination', this.store.createRecord('destination'));
+      let pin = this.get('pin', e);
+
+      //assign the destination the pin (belongs to)
+      destination.pin = this.get(pin);
+
+      //push the destination into the trip
+      trip.destinations.pushObject(destination);
 
       //move this to when addTripState is rendered false?
       this.get('newTrip').save();
-    }
+
+      //toggle 'clicked' false at the end of the process
+    },
+
+    // doneTripEditing action
   }
 });

@@ -37,6 +37,15 @@ export default Ember.Controller.extend({
       this.toggleProperty('addTripState');
     },
 
+    //add click listener when tripMode is true
+    addTripPoint(e) {
+      if(this.get('addTripState')) {
+        this.send('linkPin', e);
+        // e.target.doubleClickZoom.enable();
+        return true;
+      }
+    },
+
 
     addPoint(e) {
       if(this.get('addState')) {
