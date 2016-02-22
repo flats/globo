@@ -12,22 +12,24 @@
     </div>
   </div>
   <div>
-    <h6 class="pin-action" id="pin-edit" {{action 'savePin' pin}}>Edit Pin</h6>
-    <h6 class="pin-action" id="pin-delete" {{action 'deletePin' pin}}>Delete Pin</h6>
+    <h6 class="pin-action" id="pin-save" {{action 'savePin' pin}}>Save Pin</h6>
+    <!-- <h6 class="pin-action" id="pin-delete" {{action 'deletePin' pin}}>Delete Pin</h6> -->
   </div>
 
   {{else}}
 
   <h4 id="pin-title">{{pin.nickname}}</h4>
+  {{#if pin.startDate}}
   <div class="pin-label">
-    {{pin.startDate}}
+    <strong>Date:</strong> {{pin.startDate}}
   </div>
+  {{/if}}
   <div class="pin-label">
     {{pin.description}}
   </div>
 
   <div>
-    <h6 class="pin-action" id="pin-edit" {{action 'savePin' pin}}>Save Pin</h6>
+    <h6 class="pin-action" id="pin-edit" {{action 'editPin' pin}}>Edit Pin</h6>
     <h6 class="pin-action" id="pin-delete" {{action 'deletePin' pin}}>Delete Pin</h6>
   </div>
 {{/if}}
