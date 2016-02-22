@@ -9,7 +9,7 @@ export default ActiveModelAdapter.extend(DataAdapterMixin,{
   mapSearch: function(query) {
     var urlParts = [ this.urlPrefix(), 'places', 'search?query=' ];
     return this.ajax(urlParts.join('/') + query, 'get').then(function(response) {
-      return response;
+      return response.place;
     });
   }
 });
