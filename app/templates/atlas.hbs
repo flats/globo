@@ -18,17 +18,13 @@
 
     {{#if pastPins}}
     {{#unless pin.visited}}
-      {{#marker-layer lat=pin.lat lng=pin.long }}
-        {{add-pin pin=pin editPin='editPin' savePin='savePin' deletePin='deletePin'}}
-      {{/marker-layer}}
+      {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin) editPin='editPin' savePin='savePin' deletePin='deletePin'}}
     {{/unless}}
     {{/if}}
 
     {{#if futurePins}}
     {{#if pin.visited}}
-      {{#marker-layer lat=pin.lat lng=pin.long }}
-        {{add-pin pin=pin editPin='editPin' savePin='savePin' deletePin='deletePin'}}
-      {{/marker-layer}}
+      {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin) editPin='editPin' savePin='savePin' deletePin='deletePin'}}
     {{/if}}
     {{/if}}
 

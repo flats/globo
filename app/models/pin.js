@@ -11,7 +11,10 @@ export default DS.Model.extend({
   destinations: DS.hasMany('destination'),
   lat: DS.attr('number'),
   long: DS.attr('number'),
-  visited: DS.attr('boolean')
+  visited: DS.attr('boolean'),
+  componentId: Ember.computed('id', function() {
+    return `pin-${this.get('id')}`;
+  })
 
   // coords: Ember.computed('lat', 'long', function(){
   //   return [this.get('lat'), this.get('long')];
