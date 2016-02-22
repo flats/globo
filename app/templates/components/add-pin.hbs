@@ -1,13 +1,17 @@
-<strong>Add a pin</strong>
-<form class="form-horizontal" {{action "submitPin" on="submit"}}>
+<!-- <strong>Add a pin</strong> -->
+<!-- <form class="form-vertical" {{action "submitPin" on="submit"}}> -->
+<div class="col-xs-12" id=''>
+
   {{input value=pin.nickname id="pin-nickname" placeholder="Where?"}}
   {{input value=pin.startDate  id="pin-startDate" placeholder="When?"}}
   {{input value=pin.description  id="pin-description" placeholder="Tell us about it"}}
+</div>
+
   <!-- Will change to geocode -->
-  {{input value=pin.lat  id="place-lat" placeholder="Latitude?"}}
-  {{input value=pin.long  id="place-long" placeholder="Longitude?"}}
+  <!-- {{input value=pin.lat  id="place-lat" placeholder="Latitude?"}} -->
+  <!-- {{input value=pin.long  id="place-long" placeholder="Longitude?"}} -->
 
 
-  <button type="submit" class="btn btn-primary"></button>
-</form>
-<br><br>
+  <!-- <button type="submit" class="btn btn-xs btn-primary">Save</button> -->
+<!-- </form> -->
+<!-- <br><br> -->

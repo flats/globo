@@ -1,4 +1,6 @@
+/* globals L: false */
 import Ember from 'ember';
+// import L from 'leaflet';
 
 export default Ember.Controller.extend({
   hotel: [45.530891, -122.655504],
@@ -7,6 +9,11 @@ export default Ember.Controller.extend({
   zoom: 2,
   addState: false,
   searchQuery: null,
+  bounds: (function() {
+    var southWest = L.latLng(85, -180);
+    var northEast = L.latLng(-85, 180);
+    return L.latLngBounds(southWest, northEast);
+  })(),
   actions:{
     addDestination(){
       let trip = this.get('model.newTrip');
@@ -35,6 +42,9 @@ export default Ember.Controller.extend({
     deletePin(pin) {
       pin.deleteRecord();
       pin.save();
-    }
+    },
+    savePin(pin) {
+      pin.save();
+    },
   }
 });
