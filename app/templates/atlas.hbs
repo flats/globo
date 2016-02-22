@@ -15,10 +15,7 @@
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" noWrap=true }}
   {{#each model.pins as |pin|}}
     {{#marker-layer lat=pin.lat lng=pin.long}}
-      <h3>{{pin.nickname}}</h3>
-      {{add-pin pin=pin}}
-      <h6 {{action 'savePin' pin}}>Save this Pin</h6>
-      <h6 {{action 'deletePin' pin}}>Delete this Pin</h6>
+      {{add-pin pin=pin editPin='editPin' savePin='savePin' deletePin='deletePin'}}
     {{/marker-layer}}
   {{/each}}
 {{/leaflet-map}}
