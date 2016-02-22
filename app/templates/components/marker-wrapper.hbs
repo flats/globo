@@ -1,0 +1,5 @@
+{{#marker-layer lat=pin.lat lng=pin.long onClick=(action "pinClick")}}
+  {{add-pin pin=pin editPin='editPin' savePin='savePin' deletePin='deletePin'}}
+{{/marker-layer}}
+
+{{yield}}

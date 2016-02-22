@@ -33,7 +33,8 @@ export default Ember.Controller.extend({
       this.toggleProperty('addState');
       // $('.leaflet-map-pane').doubleClickZoom.disable();
     },
-    pinClick(e) {
+    pinSmack(pin) {
+      debugger;
       if(this.get('addTripState')) {
         debugger;
       } else {
