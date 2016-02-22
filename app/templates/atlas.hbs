@@ -22,7 +22,7 @@
 
 
   {{/each}}
-  
+
   <!-- map trips -->
   {{#each model.trips as |trip|}}
     {{polyline-layer locations=trip.pinPoints}}
@@ -30,17 +30,32 @@
 
 
 {{/leaflet-map}}
+<div class="btn-group-vertical" role="group" id="nav-btn-group">
 
-<div id="add-pin-wrapper">
-  <div id="add-pin" class="leaflet-bar {{if addState "active"}}">
-    <a href="#" {{action 'addPinMode'}}>Add a pin</a>
+  <div id="add-pin-wrapper">
+    <div id="add-pin" class="nav-button leaflet-bar {{if addState "active"}}">
+      <a href="#" {{action 'addPinMode'}}>Add a pin</a>
+    </div>
   </div>
-</div>
 
-<div id="add-trip-wrapper">
-  <div id="add-trip" class="leaflet-bar {{if addTripState "active"}}">
-    <a href="#" {{action 'addTripMode'}}>Add a Trip</a>
+  <div id="add-trip-wrapper">
+    <div id="add-trip" class="nav-button leaflet-bar {{if addTripState "active"}}">
+      <a href="#" {{action 'addTripMode'}}>Add a Trip</a>
+    </div>
   </div>
+
+  <div id="future-wrapper" class="filter-button-wrapper">
+    <div id="filter-button-future" class="nav-button leaflet-bar {{if filterFuture "active"}}">
+      <a href="#" {{action 'filterFuture'}}>Future</a>
+    </div>
+  </div>
+
+  <div id="past-wrapper" class="filter-button-wrapper">
+    <div id="filter-button-past" class="nav-button leaflet-bar {{if filterPast "active"}}">
+      <a href="#" {{action 'filterPast'}}>Past</a>
+    </div>
+  </div>
+
 </div>
 
 <div id="search-location-wrapper">
@@ -52,17 +67,7 @@
 </div>
 
 
-<div id="future-wrapper" class="filter-button-wrapper">
-  <div id="filter-button-future" class="leaflet-bar {{if filterFuture "active"}}">
-    <a href="#" {{action 'filterFuture'}}>Future</a>
-  </div>
-</div>
 
-<div id="past-wrapper" class="filter-button-wrapper">
-  <div id="filter-button-past" class="leaflet-bar {{if filterPast "active"}}">
-    <a href="#" {{action 'filterPast'}}>Past</a>
-  </div>
-</div>
 
 
 {{outlet}}
