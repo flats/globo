@@ -1,17 +1,22 @@
 /* globals L: false */
 import Ember from 'ember';
-// import L from 'leaflet';
+
+const INITIAL_ZOOM = 2;
+const SW_MAP_EDGE_X = 85;
+const SW_MAP_EDGE_Y = -180;
+const NE_MAP_EDGE_X = -85;
+const NE_MAP_EDGE_Y = 180;
+const TEXT_SEARCH_ZOOM = 14;
 
 export default Ember.Controller.extend({
-  hotel: [45.530891, -122.655504],
   lat: 0,
   lng: 0,
   zoom: 2,
   addState: false,
   searchQuery: null,
   bounds: (function() {
-    var southWest = L.latLng(85, -180);
-    var northEast = L.latLng(-85, 180);
+    const southWest = L.latLng(SW_MAP_EDGE_X, SW_MAP_EDGE_Y);
+    const northEast = L.latLng(NE_MAP_EDGE_X, NE_MAP_EDGE_Y);
     return L.latLngBounds(southWest, northEast);
   })(),
   actions:{
@@ -32,11 +37,11 @@ export default Ember.Controller.extend({
       }
     },
     findLocation() {
-      var query = this.get('searchQuery');
+      const query = this.get('searchQuery');
       this.store.adapterFor('model-place').mapSearch(query).then((result) => {
         this.set('lat', result.lat);
         this.set('lng', result.long);
-        this.set('zoom', 14);
+        this.set('zoom', TEXT_SEARCH_ZOOM);
       });
     },
     deletePin(pin) {
