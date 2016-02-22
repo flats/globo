@@ -119,6 +119,36 @@ h2#title {
     padding-bottom: 40px;
 }
 
+.filter-button-wrapper {
+    width: 120px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 120px;
+        z-index: 1;
+}
+
+#future-wrapper{
+  bottom:120px;
+}
+
+#past-wrapper{
+  bottom:60px;
+}
+
+#filter-button-past {
+    // float: left;
+    // margin: 0 0 10px 10px;
+    left:50px;
+}
+
+#filter-button-future {
+    // float: left;
+    left:200px;
+}
+
+
 #add-pin {
     float: left;
     margin: 0 0 10px 10px;
