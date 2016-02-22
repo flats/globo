@@ -30,19 +30,23 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
         this.set('newTrip', this.store.createRecord('trip'));
       }
 
-      //get the 'trip', create new destination, get the pin w/ attrs
-      let trip = this.get('newTrip');
+      var newTrip = this.get('newTrip');
+      newTrip.save();
+      
       let destination = this.set('newDestination', this.store.createRecord('destination'));
-      let pinnah = this.get('pin', pin);
+      destination.set('pin', pin);
+      destination.set('trip', newTrip);
+      destination.save();
+      // let pinnah = this.get('pin', pin);
 
       //assign the destination the pin (belongs to)
-      destination.pin = this.get(pinnah);
+      // destination.pin = this.get(pinnah);
 
       //push the destination into the trip
-      trip.destinations.pushObject(destination);
+      // trip.destinations.pushObject(destination);
 
       //move this to when addTripState is rendered false?
-      this.get('newTrip').save();
+      // this.get('newTrip').save();
 
       //toggle 'clicked' false at the end of the process
     },
