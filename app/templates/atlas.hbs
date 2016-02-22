@@ -51,12 +51,16 @@
   </div>
 </div>
 
-<div class="leaflet-bar {{if filterPast "active"}}">
-  <a href="#" {{action 'filterPast'}}>Show Past Pins</a>
+<div class="filter-button-wrapper">
+<div id="filter-button-past" class="leaflet-bar {{if filterPast "active"}}">
+  <a href="#" {{action 'filterPast'}}>Past</a>
+</div>
 </div>
 
-<div>
-  <a href="#" {{action 'filterFuture'}}>Show Future Pins</a>
+<div id="future-wrapper" class="filter-button-wrapper">
+<div id="filter-button-future" class="leaflet-bar {{if filterFuture "active"}}">
+  <a href="#" {{action 'filterFuture'}}>Future</a>
+</div>
 </div>
 
 {{outlet}}
