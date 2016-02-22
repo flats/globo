@@ -89,12 +89,16 @@ h2#title {
     // right: 0;
 }
 
-#add-pin-wrapper, #search-location-wrapper {
+#add-pin-wrapper, #search-location-wrapper, #add-trip-wrapper {
     width: 40px;
     height: 40px;
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+#add-trip-wrapper {
+  bottom: 40px;
 }
 
 #user-legend-wrapper {
@@ -118,6 +122,12 @@ h2#title {
 #add-pin {
     float: left;
     margin: 0 0 10px 10px;
+}
+
+#add-trip {
+    float: left;
+    margin: 0 0 10px 10px;
+
 }
 
 #search-location {
