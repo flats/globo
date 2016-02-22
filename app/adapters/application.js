@@ -4,6 +4,7 @@ import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
 export default ActiveModelAdapter.extend(DataAdapterMixin,{
   host: "http://localhost:3000",
+  // host: "http://globo.website:3000"
   authorizer: "authorizer:devise",
   mapSearch: function(query) {
     var urlParts = [ this.urlPrefix(), 'places', 'search?query=' ];
@@ -11,4 +12,5 @@ export default ActiveModelAdapter.extend(DataAdapterMixin,{
       return response.place;
     });
   }
+
 });

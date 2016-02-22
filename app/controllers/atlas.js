@@ -13,6 +13,8 @@ export default Ember.Controller.extend({
   lng: 0,
   zoom: 2,
   addState: false,
+  pastPins: true,
+  futurePins: true,
   searchQuery: null,
   bounds: (function() {
     const southWest = L.latLng(SW_MAP_EDGE_X, SW_MAP_EDGE_Y);
@@ -47,6 +49,12 @@ export default Ember.Controller.extend({
     deletePin(pin) {
       pin.deleteRecord();
       pin.save();
+    },
+    filterPast() {
+      this.toggleProperty('pastPins');
+    },
+    filterFuture() {
+      this.toggleProperty('futurePins');
     },
     savePin(pin) {
       pin.save();

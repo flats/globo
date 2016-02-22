@@ -14,9 +14,25 @@
 
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" noWrap=true }}
   {{#each model.pins as |pin|}}
-    {{#marker-layer lat=pin.lat lng=pin.long}}
-      {{add-pin pin=pin editPin='editPin' savePin='savePin' deletePin='deletePin'}}
-    {{/marker-layer}}
+
+
+    {{#if pastPins}}
+    {{#unless pin.visited}}
+      {{#marker-layer lat=pin.lat lng=pin.long }}
+        {{add-pin pin=pin editPin='editPin' savePin='savePin' deletePin='deletePin'}}
+      {{/marker-layer}}
+    {{/unless}}
+    {{/if}}
+
+    {{#if futurePins}}
+    {{#if pin.visited}}
+      {{#marker-layer lat=pin.lat lng=pin.long }}
+        {{add-pin pin=pin editPin='editPin' savePin='savePin' deletePin='deletePin'}}
+      {{/marker-layer}}
+    {{/if}}
+    {{/if}}
+
+
   {{/each}}
 {{/leaflet-map}}
 
@@ -33,6 +49,20 @@
     </form>
   </div>
 </div>
+
+
+<div id="future-wrapper" class="filter-button-wrapper">
+  <div id="filter-button-future" class="leaflet-bar {{if filterFuture "active"}}">
+    <a href="#" {{action 'filterFuture'}}>Future</a>
+  </div>
+</div>
+
+<div id="past-wrapper" class="filter-button-wrapper">
+  <div id="filter-button-past" class="leaflet-bar {{if filterPast "active"}}">
+    <a href="#" {{action 'filterPast'}}>Past</a>
+  </div>
+</div>
+
 
 {{outlet}}
 
