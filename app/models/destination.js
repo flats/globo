@@ -4,7 +4,7 @@ export default DS.Model.extend({
   trip: DS.belongsTo('trip'),
   pin: DS.belongsTo('pin'),
   createdAt: DS.attr('date'),
-  nextId: DS.attr('integer'),
+  nextId: DS.attr('number'),
   first: DS.attr('boolean'),
   // pin info
   nickname: DS.attr('string'),
