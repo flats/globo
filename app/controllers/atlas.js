@@ -41,6 +41,7 @@ export default Ember.Controller.extend({
       if (addPinState == true) {
         this.toggleProperty('addState');
       }
+      $('.leaflet-control-attribution').html("<em>powered by</em> ARTEMIS&#174");
     },
 
     //add click listener when tripMode is true
