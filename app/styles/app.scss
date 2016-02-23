@@ -178,14 +178,16 @@ h2#title {
     padding-left: 4px;
 }
 
-//New Trip
+//New Trip Component
 ////////////////////////
 #new-trip {
   z-index: 1;
   position: absolute;
-  bottom: 200px;
-  right: 500px;
-  background-color: #353535;
+  height: 250px;
+  overflow: scroll;
+  top: 200px;
+  left: 10px;
+  background-color: #535353;
   color: rgb(243,224,74);
   opacity: 70%;
 
