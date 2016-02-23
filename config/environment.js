@@ -5,12 +5,12 @@ module.exports = function(environment) {
     modulePrefix: 'globo',
     environment: environment,
     contentSecurityPolicy: {
-    'default-src': "'self' http://staticxx.facebook.com https://www.facebook.com http://connect.facebook.net https://connect.facebook.net",
-    'script-src': "'self' 'unsafe-inline' 'unsafe-eval' *.googleapis.com maps.gstatic.com https://connect.facebook.net http://connect.facebook.net",
+    'default-src': "'self'",
+    'script-src': "'self' 'unsafe-inline' 'unsafe-eval' .gstatic.com",
     'font-src': "'self' fonts.gstatic.com",
     'connect-src': "'self' maps.gstatic.com *",
-    'img-src': "'self' 'unsafe-inline' *.googleapis.com maps.gstatic.com csi.gstatic.com https://www.facebook.com http://*.basemaps.cartocdn.com/",
-    'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com" },
+    'img-src': "'self' 'unsafe-inline' maps.gstatic.com csi.gstatic.com http://*.basemaps.cartocdn.com/",
+    'style-src': "'self' 'unsafe-inline' fonts.googleapis.com" },
 
     baseURL: '/',
     locationType: 'auto',
