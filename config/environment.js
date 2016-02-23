@@ -25,9 +25,9 @@ module.exports = function(environment) {
       routeIfAlreadyAuthenticated: 'atlas'
     },
 
-    gmap: {
-      key: process.env.GOOGLE_KEY,
-    },
+    // gmap: {
+    //   key: process.env.GOOGLE_KEY,
+    // },
     // torii: {
     //   providers: {
     //     'facebook-connect': {
