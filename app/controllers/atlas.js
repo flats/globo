@@ -68,6 +68,13 @@ export default Ember.Controller.extend({
       });
     },
     deletePin(pin) {
+      var destinations = pin.get('destinations');
+      destinations.forEach(
+           function(destination){
+             destination.destroyRecord();
+             destination.save();
+           }
+         )
       pin.deleteRecord();
       pin.save();
     },
