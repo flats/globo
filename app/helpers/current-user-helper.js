@@ -7,7 +7,7 @@ export default Ember.CurrentUserHelper = {
       if (ENV.environment === 'development') {
         var auth_deferred = $.get('http://localhost:3000/users');
       } else {
-        var auth_deferred = $.get('http://globo.website');
+        var auth_deferred = $.get('http://globo-api.herokuapp.com');
       }
 
       auth_deferred.then(function(user) {
