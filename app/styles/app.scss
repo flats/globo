@@ -87,7 +87,12 @@ h2#title {
 
 #user-legend {
     float: right;
-    background-color: #fff;
+    opacity: 0.85;
+    color: rgb(243,224,74);
+}
+
+#user-legend .btn {
+  background-color: #535353;
 }
 
 #user-legend ul {
