@@ -3,8 +3,10 @@
 
   <ul>
     {{#each trip.destinations as |destination|}}
-      <li>{{destination.pin.nickname}}</li>
-        <!-- Coordinates:[{{destination.pin.lat}}, {{destination.pin.long}}] -->
+      <li>
+        {{destination.pin.nickname}}<br>
+        {{destination.pin.address}}
+      </li>
     {{/each}}
   </ul>
 

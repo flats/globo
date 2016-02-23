@@ -12,4 +12,5 @@ export default DS.Model.extend({
   lat: DS.attr('number'),
   long: DS.attr('number'),
   visited: DS.attr('boolean'),
+  address: DS.attr('string')
 });
