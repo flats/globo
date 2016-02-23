@@ -18,6 +18,17 @@ export default DS.Model.extend({
       locationArray.push(coords);
     });
     return locationArray;
+  }),
 
+  traveled: Ember.computed('destinations', function(){
+    this.get('destinations').forEach(function(destination){
+      let pin = destination.get('pin');
+      if (pin.get('visited')){
+        return true;
+      } else {
+        return false;
+      }
+    });
   })
+
 });
