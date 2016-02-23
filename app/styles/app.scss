@@ -5,6 +5,9 @@ body {
     background-color: #535353;
 }
 
+//Login Page
+////////////////////////
+
 #login-form {
     background-color: #333333;
     border-radius: 4px;
@@ -57,6 +60,9 @@ body {
   opacity: 0.75;
 }
 
+//Logo & Right Nav
+////////////////////////
+
 h2#title {
     background: transparent url("/globo-drop-shadow.png") top left no-repeat;
     background-size: 175px;
@@ -70,6 +76,26 @@ h2#title {
     padding-left: 175px;
     z-index: 1;
 }
+
+#user-legend-wrapper {
+    position: absolute;
+    top: 195px;
+    right: 10px;
+    z-index: 1;
+    background-color: transparent;
+}
+
+#user-legend {
+    float: right;
+    background-color: #fff;
+}
+
+#user-legend ul {
+    list-style: none;
+}
+
+//Map
+////////////////////////
 
 .g-map-canvas {
   width: 1000px;
@@ -89,13 +115,10 @@ h2#title {
     // right: 0;
 }
 
-#user-legend-wrapper {
-    position: absolute;
-    top: 195px;
-    right: 10px;
-    z-index: 1;
-    background-color: transparent;
-}
+
+
+//Left Nav Bar
+////////////////////////
 
 #nav-btn-group {
   display: block;
@@ -126,8 +149,11 @@ h2#title {
     letter-spacing: 1px;
     color: rgb(243,224,74);
     opacity: 0.85;
-    
+
 }
+
+//Search Bar
+////////////////////////
 
 #search-location-wrapper {
     width: 40px;
@@ -142,21 +168,14 @@ h2#title {
     margin: 0 10px 10px 0;
 }
 
-#user-legend {
-    float: right;
-    background-color: #fff;
-}
-
-#user-legend ul {
-    list-style: none;
-}
-
 #search-location form input {
     width: 260px;
     padding-left: 4px;
 }
 
 
+//Pin popup card
+////////////////////////
 
 #pin-title {
   text-align: center;
