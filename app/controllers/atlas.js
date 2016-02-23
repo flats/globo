@@ -27,7 +27,7 @@ export default Ember.Controller.extend({
 
     addPinMode() {
       this.toggleProperty('addState');
-      let addTripState = this.getProperties('addTripState').addTripState
+      let addTripState = this.getProperties('addTripState').addTripState;
       if (addTripState == true) {
         this.toggleProperty('addTripState');
       }
@@ -37,6 +37,10 @@ export default Ember.Controller.extend({
 
     addTripMode(){
       this.toggleProperty('addTripState');
+      let addPinState = this.getProperties('addState').addState;
+      if (addPinState == true) {
+        this.toggleProperty('addState');
+      }
     },
 
     //add click listener when tripMode is true
