@@ -91,7 +91,7 @@ h2#title {
 
 #user-legend-wrapper {
     position: absolute;
-    top: 120px;
+    top: 195px;
     right: 10px;
     z-index: 1;
     background-color: transparent;
@@ -100,7 +100,6 @@ h2#title {
 #nav-btn-group {
   display: block;
   bottom: 10px;
-
   left: 10px;
   width: 6.5em;
   position: absolute;
@@ -109,11 +108,15 @@ h2#title {
 #nav-btn-group a {
   width:inherit;
   margin-bottom: 5px;
+  background-color: #535353;
+  opacity: 0.85;
+
 }
 
 #add-trip.active a, #add-pin.active a, #filter-button-future.active a, #filter-button-past.active a {
-    background-color: #f4f4f4;
-    color: red;
+    background-color: #333333;
+    color: rgb(243,224,74);
+
 }
 
 #add-trip a, #add-pin a, #filter-button-future a, #filter-button-past a {
@@ -121,7 +124,9 @@ h2#title {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: blue;
+    color: rgb(243,224,74);
+    opacity: 0.85;
+    
 }
 
 #search-location-wrapper {
