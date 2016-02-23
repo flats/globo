@@ -38,21 +38,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
         destination.set('trip', newTrip);
         destination.save();
       });
-
-      // let pinnah = this.get('pin', pin);
-
-      //assign the destination the pin (belongs to)
-      // destination.pin = this.get(pinnah);
-
-      //push the destination into the trip
-      // trip.destinations.pushObject(destination);
-
-      //move this to when addTripState is rendered false?
-      // this.get('newTrip').save();
-
-      //toggle 'clicked' false at the end of the process
-    },
-
-    // doneTripEditing action
+    }
   }
 });

@@ -10,9 +10,12 @@
     <div class="pin-field">
       {{input value=pin.description  id="pin-description" placeholder="Tell us about it"}}
     </div>
+    <div class="pin-field">
+      Visited? {{input type="checkbox" checked=pin.visited}}
+    </div>
   </div>
   <div>
-    <h6 class="pin-action" id="pin-save" {{action 'savePin' pin}}>Save Pin</h6>
+    <h6 class="pin-action" id="pin-save" {{action 'savePin' pin}}><a>Save Pin</a></h6>
   </div>
 
   {{else}}
@@ -25,6 +28,13 @@
   {{/if}}
   <div class="pin-label">
     {{pin.description}}
+  </div>
+  <div class="pin-label">
+    {{#if pin.visited}}
+      <strong>Visited</strong>
+    {{else}}
+      <strong>Wish-List</strong>
+    {{/if}}
   </div>
 
   <div>

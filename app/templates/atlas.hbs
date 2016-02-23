@@ -9,15 +9,15 @@
   {{#each model.pins as |pin|}}
 
     {{#if pastPins}}
-    {{#unless pin.visited}}
-      {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin) editPin='editPin' savePin='savePin' deletePin='deletePin'}}
-    {{/unless}}
+      {{#unless pin.visited}}
+        {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin) editPin='editPin' savePin='savePin' deletePin='deletePin'}}
+      {{/unless}}
     {{/if}}
 
     {{#if futurePins}}
-    {{#if pin.visited}}
-      {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin) editPin='editPin' savePin='savePin' deletePin='deletePin'}}
-    {{/if}}
+      {{#if pin.visited}}
+        {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin) editPin='editPin' savePin='savePin' deletePin='deletePin'}}
+      {{/if}}
     {{/if}}
 
 
@@ -25,7 +25,19 @@
 
   <!-- map trips -->
   {{#each model.trips as |trip|}}
+
+  {{#if pastPins}}
+    {{#unless trip.traveled}}
+      {{polyline-layer locations=trip.pinPoints}}
+    {{/unless}}
+  {{/if}}
+
+  {{#if futurePins}}
+    {{#if trip.traveled}}
     {{polyline-layer locations=trip.pinPoints}}
+    {{/if}}
+  {{/if}}
+
   {{/each}}
 
 
