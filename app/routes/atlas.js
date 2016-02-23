@@ -21,7 +21,9 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
       }));
       this.get('newPin').save();
     },
-
+    resetFirstClick(){
+      this.set('firstClick', false);
+    },
     linkPin(pin){
       //only create trip on first pin click...
       // debugger;
