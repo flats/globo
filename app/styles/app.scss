@@ -194,6 +194,26 @@ h2#title {
 }
 
 
+// Edit state indicator
+/////////////////////////
+
+#state-indicator-wrapper {
+    width: 300px;
+    height: 30px;
+    position: absolute;
+    bottom: 50px;
+    right: 45%;
+}
+
+#state-indicator {
+    float: right;
+    display: inline-block;
+    opacity: 0.4;
+    font-size:250%;
+    color: #a11;
+}
+
+
 //Pin popup card
 ////////////////////////
 

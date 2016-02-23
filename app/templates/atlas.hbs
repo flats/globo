@@ -3,6 +3,8 @@
 
 </div>
 
+
+
 {{#leaflet-map lat=lat lng=lng zoom=zoom maxBoundsViscosity=0.0 maxBounds=bounds doubleClickZoom=false minZoom=3 onDblclick=(action "addPoint")}}
 
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" noWrap=true }}
@@ -50,13 +52,25 @@
 
   <div id="add-pin-wrapper">
     <div id="add-pin" class="nav-button leaflet-bar {{if addState "active"}}">
-      <a href="#" {{action 'addPinMode'}}>Add a pin</a>
+      <a href="#" {{action 'addPinMode'}}>
+        {{#if addState}}
+        *Add pin
+        {{else}}
+        Add pin
+        {{/if}}
+      </a>
     </div>
   </div>
 
   <div id="add-trip-wrapper">
     <div id="add-trip" class="nav-button leaflet-bar {{if addTripState "active"}}">
-      <a href="#" {{action 'addTripMode'}}>Add a Trip</a>
+      <a href="#" {{action 'addTripMode'}}>
+        {{#if addTripState}}
+        *add trip
+        {{else}}
+        add trip
+        {{/if}}
+      </a>
     </div>
   </div>
 
@@ -79,6 +93,17 @@
     <form id="search-location-form" {{action "findLocation" on="submit"}}>
       {{input id="search-location-input" value=searchQuery placeholder="Search for a place..."}}
     </form>
+  </div>
+</div>
+
+<div id="state-indicator-wrapper">
+  <div id="state-indicator">
+       {{#if addTripState}}
+       TRIP-EDIT-MODE
+       {{/if}}
+       {{#if addState}}
+       PIN-EDIT-MODE
+       {{/if}}
   </div>
 </div>
 
