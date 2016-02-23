@@ -36,12 +36,16 @@ export default Ember.Controller.extend({
     },
 
     //add click listener when tripMode is true
-    pinSmack(pin) {
+    pinSmack(pin, e) {
       if(this.get('addTripState')) {
+        // debugger
+        // e.stopPropogation();
         this.send('linkPin', pin);
       } else {
         return false;
       }
+      // event.target.closePopup();
+
       return true;
     },
 

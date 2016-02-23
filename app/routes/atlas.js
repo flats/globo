@@ -24,6 +24,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
 
     linkPin(pin){
       //only create trip on first pin click...
+      // debugger;
       let destination = this.set('newDestination', this.store.createRecord('destination'));
       destination.set('pin', pin);
 
@@ -37,8 +38,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
         destination.set('trip', newTrip);
         destination.save();
       });
-  
-    },
-
+    }
   }
 });
