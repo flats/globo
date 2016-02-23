@@ -27,7 +27,7 @@ export default Ember.Controller.extend({
 
     addPinMode() {
       this.toggleProperty('addState');
-      let addTripState = this.getProperties('addTripState').addTripState;
+      let addTripState = this.get('addTripState');
       if (addTripState == true) {
         this.toggleProperty('addTripState');
       }
@@ -37,11 +37,11 @@ export default Ember.Controller.extend({
 
     addTripMode(){
       this.toggleProperty('addTripState');
-      let addPinState = this.getProperties('addState').addState;
+      let addPinState = this.get('addState');
+      debugger;
       if (addPinState == true) {
         this.toggleProperty('addState');
       }
-      $('.leaflet-control-attribution').html("<em>powered by</em> ARTEMIS&#174");
     },
 
     //add click listener when tripMode is true
