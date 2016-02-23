@@ -5,6 +5,5 @@ export default DS.Model.extend({
   lat: DS.attr('number'),
   long: DS.attr('number'),
   createdAt: DS.attr('date'),
-  pins: DS.hasMany('pin'),
-  address: DS.attr('string')
+  pins: DS.hasMany('pin')
 });
