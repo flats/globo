@@ -27,6 +27,10 @@ export default Ember.Controller.extend({
 
     addPinMode() {
       this.toggleProperty('addState');
+      let addTripState = this.getProperties('addTripState').addTripState
+      if (addTripState == true) {
+        this.toggleProperty('addTripState');
+      }
       // $('.leaflet-map-pane').doubleClickZoom.disable();
     },
 
