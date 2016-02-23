@@ -138,6 +138,7 @@ h2#title {
   margin-bottom: 5px;
   background-color: #535353;
   opacity: 0.85;
+  text-decoration: none
 
 }
 
@@ -203,20 +204,24 @@ h2#title {
 /////////////////////////
 
 #state-indicator-wrapper {
-    width: 300px;
-    height: 30px;
+    width: 50%;
+    // height: 30px;
     position: absolute;
     bottom: 50px;
-    right: 45%;
+    // right: 25%;
+    left: 25%;
+    // margin: 0 auto;
     z-index: 1;
+    text-align: center;
 }
 
 #state-indicator {
-    float: right;
-    display: inline-block;
+    // float: right;
+    // display: inline-block;
     opacity: 0.4;
     font-size:250%;
     color: #a11;
+    font-family: cursive;
 }
 
 
