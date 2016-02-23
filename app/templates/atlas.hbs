@@ -28,22 +28,26 @@
   <!-- map trips -->
   {{#each model.trips as |trip|}}
 
-  {{#if pastPins}}
-    {{#unless trip.traveled}}
-      {{polyline-layer locations=trip.pinPoints}}
-    {{/unless}}
-  {{/if}}
-
-  {{#if futurePins}}
-    {{#if trip.traveled}}
-    {{polyline-layer locations=trip.pinPoints}}
+    {{#if pastPins}}
+      {{#unless trip.traveled}}
+        {{polyline-layer locations=trip.pinPoints}}
+      {{/unless}}
     {{/if}}
-  {{/if}}
+
+    {{#if futurePins}}
+      {{#if trip.traveled}}
+      {{polyline-layer locations=trip.pinPoints}}
+      {{/if}}
+    {{/if}}
 
   {{/each}}
 
-
 {{/leaflet-map}}
+
+{{#if addTripState}}
+  {{add-trip trip=newTrip}}
+{{/if}}
+
 <div class="btn-group-vertical" role="group" id="nav-btn-group">
 
   <div id="add-pin-wrapper">

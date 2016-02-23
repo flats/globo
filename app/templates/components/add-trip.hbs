@@ -1,28 +1,11 @@
-<strong>Add a trip</strong>
-<form class="form-horizontal" {{action "submitTrip" on="submit"}}>
-  {{input value=trip.name id="trip-name" placeholder="Name your trip?"}}
-  {{input value=trip.startDate  id="trip-startDate" placeholder="When?"}}
+<div class="trip-container leaflet-bar" id="new-trip">
+  <h3>Trip Details</h3>
 
-  <button type="button" name="button" {{action "addDestination"}}>Add a destination</button>
+  <ul>
     {{#each trip.destinations as |destination|}}
-      <div class="form-group">
-        {{input value=destination.nickname placeholder="Where?"}}
-        {{input value=destination.startDate  placeholder="When?"}}
-        {{input value=destination.description  placeholder="Tell us about it"}}
-        <!-- Will change to geocode -->
-        {{input value=destination.lat  placeholder="Latitude?"}}
-        {{input value=destination.long  placeholder="Longitude?"}}
-      </div>
+      <li>Where?{{destination.pin.name}}</li>
+        Coordinates:[{{destination.pin.lat}}, {{destination.pin.long}}]
     {{/each}}
+  </ul>
 
-
-
-
-
-  <button type="submit" class="btn btn-primary"></button>
-</form>
-<br><br>
-
-
-<!-- Need to do ability to add additional pins THROUGH destination -->
-<!-- how to create as many pins as I need? -->
+</div>

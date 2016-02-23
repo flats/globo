@@ -28,7 +28,7 @@ export default Ember.Controller.extend({
     addPinMode() {
       this.toggleProperty('addState');
       let addTripState = this.get('addTripState');
-      if (addTripState == true) {
+      if (addTripState === true) {
         this.toggleProperty('addTripState');
       }
       // $('.leaflet-map-pane').doubleClickZoom.disable();
@@ -37,11 +37,16 @@ export default Ember.Controller.extend({
 
     addTripMode(){
       this.toggleProperty('addTripState');
+
+      //reset newTrip so trip window won't persist
+      this.set('newTrip', null);
+      this.send('resetFirstClick');
+
       let addPinState = this.get('addState');
-      debugger;
-      if (addPinState == true) {
+      if (addPinState === true) {
         this.toggleProperty('addState');
       }
+
     },
 
     //add click listener when tripMode is true
@@ -80,7 +85,7 @@ export default Ember.Controller.extend({
              destination.destroyRecord();
              destination.save();
            }
-         )
+         );
       pin.deleteRecord();
       pin.save();
     },

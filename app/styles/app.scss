@@ -178,6 +178,26 @@ h2#title {
     padding-left: 4px;
 }
 
+//New Trip Component
+////////////////////////
+#new-trip {
+  z-index: 1;
+  position: absolute;
+  height: 250px;
+  overflow: scroll;
+  top: 200px;
+  left: 10px;
+  background-color: #535353;
+  color: rgb(243,224,74);
+  opacity: 0.8;
+  min-width: 300px;
+
+}
+
+#new-trip h3 {
+  text-align: center;
+}
+
 
 // Edit state indicator
 /////////////////////////
@@ -188,6 +208,7 @@ h2#title {
     position: absolute;
     bottom: 50px;
     right: 45%;
+    z-index: 1;
 }
 
 #state-indicator {
