@@ -1,5 +1,12 @@
 import DeviseAuthenticator from 'ember-simple-auth/authenticators/devise';
+import ENV from 'globo/config/environment';
 
 export default DeviseAuthenticator.extend({
-  serverTokenEndpoint: "http://localhost:3000/users/sign_in"
+  serverTokenEndpoint: (function() {
+      if (ENV.environment === 'development') {
+        return "http://localhost:3000/users/sign_in";
+      } else {
+        return "http://globo.website/users/sign_in";
+      }
+    })()
 });

@@ -6,6 +6,10 @@ export default Ember.Component.extend({
       // debugger;
       // e.originalEvent.preventDefault();
       // e.originalEvent.stopImmediatePropagation();
+      // L.DomEvent.stopImmediatePropagation(e);
+      // debugger
+      // L.DomEvent.preventDefault(e);
+      // L.DomEvent.stop(e);
       this.sendAction('pinSmack', e);
     },
     savePin(pin){

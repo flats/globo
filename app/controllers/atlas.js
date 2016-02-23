@@ -40,9 +40,6 @@ export default Ember.Controller.extend({
       if(this.get('addTripState')) {
         // debugger
         // e.stopPropogation();
-        debugger;
-        e.originalEvent.preventDefault();
-
         this.send('linkPin', pin);
       } else {
         return false;
