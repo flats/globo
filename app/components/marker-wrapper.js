@@ -4,6 +4,8 @@ export default Ember.Component.extend({
   actions: {
     pinClick(e) {
       // debugger;
+      // e.originalEvent.preventDefault();
+      // e.originalEvent.stopImmediatePropagation();
       this.sendAction('pinSmack', e);
     },
     savePin(pin){
