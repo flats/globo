@@ -178,6 +178,19 @@ h2#title {
     padding-left: 4px;
 }
 
+//New Trip
+////////////////////////
+#new-trip {
+  z-index: 1;
+  position: absolute;
+  bottom: 200px;
+  right: 500px;
+  background-color: #353535;
+  color: rgb(243,224,74);
+  opacity: 70%;
+
+}
+
 
 //Pin popup card
 ////////////////////////

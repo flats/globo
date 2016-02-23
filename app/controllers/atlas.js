@@ -33,6 +33,8 @@ export default Ember.Controller.extend({
 
     addTripMode(){
       this.toggleProperty('addTripState');
+      //reset newTrip so trip window won't persist
+      this.set('newTrip', null);
     },
 
     //add click listener when tripMode is true
