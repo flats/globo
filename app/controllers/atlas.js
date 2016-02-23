@@ -2,6 +2,9 @@
 import Ember from 'ember';
 import MarkerLayerComponent from 'ember-leaflet/components/marker-layer';
 
+
+const INITIAL_LAT = 20;
+const INITIAL_LONG = 0;
 const INITIAL_ZOOM = 2;
 const SW_MAP_EDGE_X = 85;
 const SW_MAP_EDGE_Y = -180;
@@ -10,9 +13,9 @@ const NE_MAP_EDGE_Y = 180;
 const TEXT_SEARCH_ZOOM = 14;
 
 export default Ember.Controller.extend({
-  lat: 0,
-  lng: 0,
-  zoom: 2,
+  lat: INITIAL_LAT,
+  lng: INITIAL_LONG,
+  zoom: INITIAL_ZOOM,
   addState: false,
   addTripState: false,
   pastPins: true,

@@ -54,7 +54,7 @@
     <div id="add-pin" class="nav-button leaflet-bar {{if addState "active"}}">
       <a href="#" {{action 'addPinMode'}}>
         {{#if addState}}
-        *Add pin
+        done
         {{else}}
         Add pin
         {{/if}}
@@ -66,7 +66,7 @@
     <div id="add-trip" class="nav-button leaflet-bar {{if addTripState "active"}}">
       <a href="#" {{action 'addTripMode'}}>
         {{#if addTripState}}
-        *add trip
+        done
         {{else}}
         add trip
         {{/if}}
@@ -99,10 +99,10 @@
 <div id="state-indicator-wrapper">
   <div id="state-indicator">
        {{#if addTripState}}
-       TRIP-EDIT-MODE
+       Select pins to create a trip
        {{/if}}
        {{#if addState}}
-       PIN-EDIT-MODE
+       Double click to add a pin to the map
        {{/if}}
   </div>
 </div>
