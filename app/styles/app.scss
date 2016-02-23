@@ -189,8 +189,13 @@ h2#title {
   left: 10px;
   background-color: #535353;
   color: rgb(243,224,74);
-  opacity: 70%;
+  opacity: 0.8;
+  min-width: 300px;
 
+}
+
+#new-trip h3 {
+  text-align: center;
 }
 
 
@@ -203,6 +208,7 @@ h2#title {
     position: absolute;
     bottom: 50px;
     right: 45%;
+    z-index: 1;
 }
 
 #state-indicator {
