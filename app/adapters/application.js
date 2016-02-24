@@ -3,7 +3,6 @@ import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 import ENV from 'globo/config/environment';
 
 export default ActiveModelAdapter.extend(DataAdapterMixin, {
-  host: "http://localhost:3000",
   host: (function() {
     if (ENV.environment === 'development') {
       return "http://localhost:3000";
