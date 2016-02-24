@@ -30,7 +30,7 @@
 
     {{#if pastPins}}
       {{#unless trip.traveled}}
-        {{trip-line-wrapper pinPoints=trip.pinPoints}}
+        {{trip-line-wrapper pinPoints=trip.pinPoints tripSmack=(action 'tripSmack' trip)}}
       <!-- color=lineColor[index] -->
         <!-- {{polyline-layer locations=trip.pinPoints }} -->
       {{/unless}}
@@ -38,7 +38,7 @@
 
     {{#if futurePins}}
       {{#if trip.traveled}}
-        {{trip-line-wrapper pinPoints=trip.pinPoints}}
+        {{trip-line-wrapper pinPoints=trip.pinPoints tripSmack=(action 'tripSmack' trip)}}
       <!-- color=lineColor[index] -->
       <!-- {{polyline-layer locations=trip.pinPoints }} -->
       {{/if}}

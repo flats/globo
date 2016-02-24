@@ -56,14 +56,10 @@ export default Ember.Controller.extend({
     //add click listener when tripMode is true
     pinSmack(pin, e) {
       if(this.get('addTripState')) {
-        // debugger
-        // e.stopPropogation();
         this.send('linkPin', pin);
       } else {
         return false;
       }
-      // event.target.closePopup();
-
       return true;
     },
 
@@ -73,6 +69,10 @@ export default Ember.Controller.extend({
         // e.target.doubleClickZoom.enable();
         return true;
       }
+    },
+    tripSmack(trip) {
+      debugger;
+
     },
     findLocation() {
       const query = this.get('searchQuery');
