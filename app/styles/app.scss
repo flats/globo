@@ -187,7 +187,7 @@ h2#title {
   position: absolute;
   height: 250px;
   overflow-y: scroll;
-  top: 200px;
+  top: 100px;
   left: 10px;
   background-color: #535353;
   color: rgb(243,224,74);
@@ -206,6 +206,10 @@ h2#title {
 
 #new-trip h3 {
   text-align: center;
+}
+
+#new-trip .btn {
+  background-color: #333333;
 }
 
 

@@ -36,7 +36,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
       }
 
       var newTrip = this.get('newTrip');
-      this.controllerFor(this.routeName).set('newTrip', newTrip);
+      this.controllerFor(this.routeName).set('currentTrip', newTrip);
 
       newTrip.save().then(() => {
         destination.set('trip', newTrip);

@@ -1,9 +1,3 @@
-<div class="HAMBONE-CITY">
-
-
-</div>
-
-
 
 {{#leaflet-map lat=lat lng=lng zoom=zoom maxBoundsViscosity=0.0 maxBounds=bounds doubleClickZoom=false minZoom=3 onDblclick=(action "addPoint")}}
 
@@ -26,17 +20,17 @@
   {{/each}}
 
   <!-- map trips -->
-  {{#each model.trips as |trip index|}}
+  {{#each model.trips as |trip|}}
 
     {{#if pastPins}}
       {{#unless trip.traveled}}
-        {{polyline-layer locations=trip.pinPoints color=trip.web_color}}
+        {{trip-line-wrapper pinPoints=trip.pinPoints tripSmack=(action 'tripSmack' trip)}}
       {{/unless}}
     {{/if}}
 
     {{#if futurePins}}
       {{#if trip.traveled}}
-      {{polyline-layer locations=trip.pinPoints color=lineColor[index]}}
+        {{trip-line-wrapper pinPoints=trip.pinPoints tripSmack=(action 'tripSmack' trip)}}
       {{/if}}
     {{/if}}
 
@@ -44,8 +38,8 @@
 
 {{/leaflet-map}}
 
-{{#if addTripState}}
-  {{add-trip trip=newTrip}}
+{{#if tripListener}}
+  {{add-trip trip=currentTrip closeTripWindow='closeTripWindow'}}
 {{/if}}
 
 <div class="btn-group-vertical" role="group" id="nav-btn-group">

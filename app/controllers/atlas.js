@@ -1,6 +1,5 @@
 /* globals L: false */
 import Ember from 'ember';
-import MarkerLayerComponent from 'ember-leaflet/components/marker-layer';
 
 
 const INITIAL_LAT = 20;
@@ -18,6 +17,7 @@ export default Ember.Controller.extend({
   zoom: INITIAL_ZOOM,
   addState: false,
   addTripState: false,
+
   pastPins: true,
   futurePins: true,
   searchQuery: null,
@@ -27,6 +27,16 @@ export default Ember.Controller.extend({
     const northEast = L.latLng(NE_MAP_EDGE_X, NE_MAP_EDGE_Y);
     return L.latLngBounds(southWest, northEast);
   })(),
+  tripListener: Ember.computed('addTripState', 'currentTrip',function(){
+      if (this.get('addTripState') === true || this.get('viewTripState') === true ){
+        return true;
+      } else{
+        return false;
+      }
+    }),
+  viewTripState: false,
+
+
   actions:{
 
     addPinMode() {
@@ -38,12 +48,11 @@ export default Ember.Controller.extend({
       // $('.leaflet-map-pane').doubleClickZoom.disable();
     },
 
-
     addTripMode(){
       this.toggleProperty('addTripState');
 
-      //reset newTrip so trip window won't persist
-      this.set('newTrip', null);
+      //reset currentTrip so trip window won't persist
+      this.set('currentTrip', null);
       this.send('resetFirstClick');
 
       let addPinState = this.get('addState');
@@ -54,16 +63,12 @@ export default Ember.Controller.extend({
     },
 
     //add click listener when tripMode is true
-    pinSmack(pin, e) {
+    pinSmack(pin) {
       if(this.get('addTripState')) {
-        // debugger
-        // e.stopPropogation();
         this.send('linkPin', pin);
       } else {
         return false;
       }
-      // event.target.closePopup();
-
       return true;
     },
 
@@ -74,6 +79,18 @@ export default Ember.Controller.extend({
         return true;
       }
     },
+    tripSmack(trip) {
+      this.toggleProperty('viewTripState');
+      this.set('currentTrip', trip);
+    },
+
+    closeTripWindow(){
+      this.set('currentTrip', null);
+      this.set('addTripState', false);
+      this.set('viewTripState', false);
+
+    },
+
     findLocation() {
       const query = this.get('searchQuery');
       this.store.adapterFor('model-place').mapSearch(query).then((result) => {
