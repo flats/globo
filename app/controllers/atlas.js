@@ -86,6 +86,7 @@ export default Ember.Controller.extend({
       this.set('currentTrip', null);
       this.set('addTripMode', false);
     },
+
     findLocation() {
       const query = this.get('searchQuery');
       this.store.adapterFor('model-place').mapSearch(query).then((result) => {
