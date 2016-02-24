@@ -6,7 +6,7 @@ export default DeviseAuthenticator.extend({
       if (ENV.environment === 'development') {
         return "http://localhost:3000/users/sign_in";
       } else {
-        return "http://globo-api.herokuapp.com/users/sign_in";
+        return "https://globo-api.herokuapp.com/users/sign_in";
       }
     })()
 });
