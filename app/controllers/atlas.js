@@ -1,6 +1,5 @@
 /* globals L: false */
 import Ember from 'ember';
-import MarkerLayerComponent from 'ember-leaflet/components/marker-layer';
 
 
 const INITIAL_LAT = 20;
@@ -38,12 +37,11 @@ export default Ember.Controller.extend({
       // $('.leaflet-map-pane').doubleClickZoom.disable();
     },
 
-
     addTripMode(){
       this.toggleProperty('addTripState');
 
-      //reset newTrip so trip window won't persist
-      this.set('newTrip', null);
+      //reset currentTrip so trip window won't persist
+      this.set('currentTrip', null);
       this.send('resetFirstClick');
 
       let addPinState = this.get('addState');
@@ -54,7 +52,7 @@ export default Ember.Controller.extend({
     },
 
     //add click listener when tripMode is true
-    pinSmack(pin, e) {
+    pinSmack(pin) {
       if(this.get('addTripState')) {
         this.send('linkPin', pin);
       } else {
@@ -72,6 +70,7 @@ export default Ember.Controller.extend({
     },
     tripSmack(trip) {
       debugger;
+      this.set('currentTrip', trip);
 
     },
     findLocation() {

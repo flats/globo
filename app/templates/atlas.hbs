@@ -49,8 +49,8 @@
 {{/leaflet-map}}
 
   <!-- change to show trip state? -->
-{{#if addTripState}}
-  {{add-trip trip=newTrip}}
+{{#if currentTrip}}
+  {{add-trip trip=currentTrip}}
 {{/if}}
 
 <div class="btn-group-vertical" role="group" id="nav-btn-group">
