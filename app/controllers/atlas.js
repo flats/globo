@@ -17,6 +17,7 @@ export default Ember.Controller.extend({
   zoom: INITIAL_ZOOM,
   addState: false,
   addTripState: false,
+
   pastPins: true,
   futurePins: true,
   searchQuery: null,
@@ -26,6 +27,15 @@ export default Ember.Controller.extend({
     const northEast = L.latLng(NE_MAP_EDGE_X, NE_MAP_EDGE_Y);
     return L.latLngBounds(southWest, northEast);
   })(),
+  tripListener: Ember.computed('addTripState', 'currentTrip',function(){
+      if (this.get('addTripState') === true || this.get('currentTrip') != null ){
+        return true;
+      } else{
+        return false;
+      }
+    }),
+
+
   actions:{
 
     addPinMode() {
@@ -73,7 +83,8 @@ export default Ember.Controller.extend({
     },
 
     closeTripWindow(){
-      this.set('currentTrip', null);      
+      this.set('currentTrip', null);
+      this.set('addTripMode', false);
     },
     findLocation() {
       const query = this.get('searchQuery');
