@@ -8,7 +8,7 @@ export default ActiveModelAdapter.extend(DataAdapterMixin, {
     if (ENV.environment === 'development') {
       return "http://localhost:3000";
     } else {
-      return "http://globo-api.herokuapp.com";
+      return "https://globo-api.herokuapp.com";
     }
   })(),
   authorizer: "authorizer:devise",
