@@ -30,15 +30,17 @@
 
     {{#if pastPins}}
       {{#unless trip.traveled}}
+        {{trip-line-wrapper pinPoints=trip.pinPoints}}
       <!-- color=lineColor[index] -->
-        {{polyline-layer locations=trip.pinPoints }}
+        <!-- {{polyline-layer locations=trip.pinPoints }} -->
       {{/unless}}
     {{/if}}
 
     {{#if futurePins}}
       {{#if trip.traveled}}
+        {{trip-line-wrapper pinPoints=trip.pinPoints}}
       <!-- color=lineColor[index] -->
-      {{polyline-layer locations=trip.pinPoints }}
+      <!-- {{polyline-layer locations=trip.pinPoints }} -->
       {{/if}}
     {{/if}}
 
@@ -46,6 +48,7 @@
 
 {{/leaflet-map}}
 
+  <!-- change to show trip state? -->
 {{#if addTripState}}
   {{add-trip trip=newTrip}}
 {{/if}}
