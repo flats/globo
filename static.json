@@ -1,1 +1,3 @@
-static.json
+{
+  "https_only": true
+}
