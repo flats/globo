@@ -1,9 +1,3 @@
-<div class="HAMBONE-CITY">
-
-
-</div>
-
-
 
 {{#leaflet-map lat=lat lng=lng zoom=zoom maxBoundsViscosity=0.0 maxBounds=bounds doubleClickZoom=false minZoom=3 onDblclick=(action "addPoint")}}
 
@@ -48,7 +42,6 @@
 
 {{/leaflet-map}}
 
-  <!-- change to show trip state? -->
 {{#if tripListener}}
   {{add-trip trip=currentTrip closeTripWindow='closeTripWindow'}}
 {{/if}}
