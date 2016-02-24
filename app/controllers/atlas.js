@@ -69,9 +69,11 @@ export default Ember.Controller.extend({
       }
     },
     tripSmack(trip) {
-      debugger;
       this.set('currentTrip', trip);
+    },
 
+    closeTripWindow(){
+      this.set('currentTrip', null);      
     },
     findLocation() {
       const query = this.get('searchQuery');
