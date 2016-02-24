@@ -24,13 +24,13 @@
 
     {{#if pastPins}}
       {{#unless trip.traveled}}
-        {{trip-line-wrapper pinPoints=trip.pinPoints tripSmack=(action 'tripSmack' trip)}}
+        {{trip-line-wrapper pinPoints=trip.pinPoints trip=trip tripSmack=(action 'tripSmack' trip)}}
       {{/unless}}
     {{/if}}
 
     {{#if futurePins}}
       {{#if trip.traveled}}
-        {{trip-line-wrapper pinPoints=trip.pinPoints tripSmack=(action 'tripSmack' trip)}}
+        {{trip-line-wrapper pinPoints=trip.pinPoints trip=trip tripSmack=(action 'tripSmack' trip)}}
       {{/if}}
     {{/if}}
 
