@@ -20,21 +20,17 @@
   {{/each}}
 
   <!-- map trips -->
-  {{#each model.trips as |trip index|}}
+  {{#each model.trips as |trip|}}
 
     {{#if pastPins}}
       {{#unless trip.traveled}}
         {{trip-line-wrapper pinPoints=trip.pinPoints tripSmack=(action 'tripSmack' trip)}}
-      <!-- color=lineColor[index] -->
-        <!-- {{polyline-layer locations=trip.pinPoints }} -->
       {{/unless}}
     {{/if}}
 
     {{#if futurePins}}
       {{#if trip.traveled}}
         {{trip-line-wrapper pinPoints=trip.pinPoints tripSmack=(action 'tripSmack' trip)}}
-      <!-- color=lineColor[index] -->
-      <!-- {{polyline-layer locations=trip.pinPoints }} -->
       {{/if}}
     {{/if}}
 
