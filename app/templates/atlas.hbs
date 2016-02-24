@@ -26,17 +26,17 @@
   {{/each}}
 
   <!-- map trips -->
-  {{#each model.trips as |trip|}}
+  {{#each model.trips as |trip index|}}
 
     {{#if pastPins}}
       {{#unless trip.traveled}}
-        {{polyline-layer locations=trip.pinPoints}}
+        {{polyline-layer locations=trip.pinPoints color=lineColor[index]}}
       {{/unless}}
     {{/if}}
 
     {{#if futurePins}}
       {{#if trip.traveled}}
-      {{polyline-layer locations=trip.pinPoints}}
+      {{polyline-layer locations=trip.pinPoints color=lineColor[index]}}
       {{/if}}
     {{/if}}
 

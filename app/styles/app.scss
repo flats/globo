@@ -5,7 +5,7 @@ body {
     background-color: #535353;
 }
 
-//Login Page
+// Login Page
 ////////////////////////
 
 #login-form {
@@ -60,7 +60,7 @@ body {
   opacity: 0.75;
 }
 
-//Logo & Right Nav
+// Logo & Right Nav
 ////////////////////////
 
 h2#title {
@@ -80,7 +80,7 @@ h2#title {
 #user-legend-wrapper {
     position: absolute;
     top: 195px;
-    right: 10px;
+    right: 57px;
     z-index: 1;
     background-color: transparent;
 }
@@ -99,7 +99,7 @@ h2#title {
     list-style: none;
 }
 
-//Map
+// Map
 ////////////////////////
 
 .g-map-canvas {
@@ -122,7 +122,7 @@ h2#title {
 
 
 
-//Left Nav Bar
+// Left Nav Bar
 ////////////////////////
 
 #nav-btn-group {
@@ -158,7 +158,7 @@ h2#title {
 
 }
 
-//Search Bar
+// Search Bar
 ////////////////////////
 
 #search-location-wrapper {
@@ -179,20 +179,29 @@ h2#title {
     padding-left: 4px;
 }
 
-//New Trip Component
+// New Trip Component
 ////////////////////////
+
 #new-trip {
   z-index: 1;
   position: absolute;
   height: 250px;
-  overflow: scroll;
+  overflow-y: scroll;
   top: 200px;
   left: 10px;
   background-color: #535353;
   color: rgb(243,224,74);
-  opacity: 0.8;
-  min-width: 300px;
+  opacity: 0.9;
+  width: 300px;
+}
 
+#new-trip ol {
+  width: 280px;
+  padding-left: 34px;
+}
+
+#new-trip ol li {
+  margin-bottom: .25em;
 }
 
 #new-trip h3 {
@@ -225,16 +234,12 @@ h2#title {
 }
 
 
-//Pin popup card
+// Pin popup card
 ////////////////////////
 
 #pin-title {
   text-align: center;
 }
-
-#pin-form {}
-
-#pin-field {}
 
 .pin-action {
   display: inline-block;
