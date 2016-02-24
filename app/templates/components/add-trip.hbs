@@ -1,13 +1,13 @@
 <div class="trip-container leaflet-bar" id="new-trip">
   <h3>Trip Details</h3>
 
-  <ul>
+  <ol>
     {{#each trip.destinations as |destination|}}
       <li>
         {{destination.pin.nickname}}<br>
         {{destination.pin.address}}
       </li>
     {{/each}}
-  </ul>
+  </ol>
 
 </div>
