@@ -28,12 +28,13 @@ export default Ember.Controller.extend({
     return L.latLngBounds(southWest, northEast);
   })(),
   tripListener: Ember.computed('addTripState', 'currentTrip',function(){
-      if (this.get('addTripState') === true || this.get('currentTrip') != null ){
+      if (this.get('addTripState') === true || this.get('viewTripState') === true ){
         return true;
       } else{
         return false;
       }
     }),
+  viewTripState: false,
 
 
   actions:{
@@ -79,12 +80,15 @@ export default Ember.Controller.extend({
       }
     },
     tripSmack(trip) {
+      this.toggleProperty('viewTripState');
       this.set('currentTrip', trip);
     },
 
     closeTripWindow(){
       this.set('currentTrip', null);
-      this.set('addTripMode', false);
+      this.set('addTripState', false);
+      this.set('viewTripState', false);
+
     },
 
     findLocation() {
