@@ -10,6 +10,9 @@ module.exports = function(defaults) {
         'bower_components/bootstrap-sass/assets/stylesheets'
       ]
     },
+    fingerprint: {
+      enabled: false
+    },
     dotEnv: {
       clientAllowedKeys: ['FB_APP_ID']
     }

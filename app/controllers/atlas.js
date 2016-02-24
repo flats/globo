@@ -21,6 +21,7 @@ export default Ember.Controller.extend({
   pastPins: true,
   futurePins: true,
   searchQuery: null,
+  lineColor: ["#ee133f", "#00000", "#ad44fa", "#ee133f", "#00000", "#ad44fa", "#ee133f", "#00000", "#ad44fa"],
   bounds: (function() {
     const southWest = L.latLng(SW_MAP_EDGE_X, SW_MAP_EDGE_Y);
     const northEast = L.latLng(NE_MAP_EDGE_X, NE_MAP_EDGE_Y);
