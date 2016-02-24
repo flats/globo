@@ -5,6 +5,7 @@ import Ember from 'ember';
 
 export default DS.Model.extend({
   name: DS.attr('string'),
+  web_color: DS.attr('string'),
   startDate: DS.attr('date'),
   user: DS.belongsTo('user'),
   createdAt: DS.attr('date'),

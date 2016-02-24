@@ -30,7 +30,7 @@
 
     {{#if pastPins}}
       {{#unless trip.traveled}}
-        {{polyline-layer locations=trip.pinPoints color=lineColor[index]}}
+        {{polyline-layer locations=trip.pinPoints color=trip.web_color}}
       {{/unless}}
     {{/if}}
 
