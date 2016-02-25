@@ -4,14 +4,6 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'globo',
     environment: environment,
-    contentSecurityPolicy: {
-    'default-src': "'self'",
-    'script-src': "'self' 'unsafe-inline' 'unsafe-eval' .gstatic.com",
-    'font-src': "'self' fonts.gstatic.com",
-    'connect-src': "'self' maps.gstatic.com *",
-    'img-src': "'self' 'unsafe-inline' maps.gstatic.com csi.gstatic.com http://*.basemaps.cartocdn.com/",
-    'style-src': "'self' 'unsafe-inline' fonts.googleapis.com" },
-
     baseURL: '/',
     locationType: 'hash',
     EmberENV: {
@@ -20,22 +12,6 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-    'ember-simple-auth': {
-      routeAfterAuthentication: 'atlas',
-      routeIfAlreadyAuthenticated: 'atlas'
-    },
-
-    // gmap: {
-    //   key: process.env.GOOGLE_KEY,
-    // },
-    // torii: {
-    //   providers: {
-    //     'facebook-connect': {
-    //       appId: process.env.FB_KEY,
-    //       scope: 'email'
-    //     }
-    //   }
-    // },
 
     APP: {
       // Here you can pass flags/options to your application instance
@@ -64,7 +40,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
   }
 
   return ENV;
