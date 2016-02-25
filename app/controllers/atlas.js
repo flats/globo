@@ -119,5 +119,9 @@ export default Ember.Controller.extend({
     savePin(pin) {
       pin.save();
     },
+    saveDestination(destination){
+      console.log("CONTROLLER ATLAS SAVE DESTINATION");
+      destination.save();
+    }
   }
 });
