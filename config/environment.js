@@ -13,7 +13,7 @@ module.exports = function(environment) {
     'style-src': "'self' 'unsafe-inline' fonts.googleapis.com" },
 
     baseURL: '/',
-    locationType: 'hash',
+    locationType: process.env.EMBER_CLI_ELECTRON ? 'hash' : 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
