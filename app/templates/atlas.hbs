@@ -2,35 +2,45 @@
 {{#leaflet-map lat=lat lng=lng zoom=zoom maxBoundsViscosity=0.0 maxBounds=bounds doubleClickZoom=false minZoom=3 onDblclick=(action "addPoint")}}
 
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" noWrap=true }}
+
+
   {{#each model.pins as |pin|}}
-
+        <!-- if past pins is set to true, show this block -->
     {{#if pastPins}}
-      {{#unless pin.visited}}
-        {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin) editPin='editPin' savePin='savePin' deletePin='deletePin'}}
-      {{/unless}}
-    {{/if}}
-
-    {{#if futurePins}}
+        <!-- only want to show visited pins in this block -->
       {{#if pin.visited}}
         {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin) editPin='editPin' savePin='savePin' deletePin='deletePin'}}
       {{/if}}
     {{/if}}
 
+        <!-- if future pins is set to true, show this block -->
+    {{#if futurePins}}
+
+      {{#if pin.visited}}
+        <!-- render nothing -->
+      {{else}}
+        {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin) editPin='editPin' savePin='savePin' deletePin='deletePin'}}
+      {{/if}}
+    {{/if}}
 
   {{/each}}
+
 
   <!-- map trips -->
   {{#each model.trips as |trip|}}
 
+  <!-- if past pins is set to true, show this block -->
     {{#if pastPins}}
-      {{#unless trip.traveled}}
-        {{trip-line-wrapper pinPoints=trip.pinPoints trip=trip tripSmack=(action 'tripSmack' trip)}}
-      {{/unless}}
+      {{#if trip.traveled}}
+        {{trip-line-wrapper pinPoints=trip.pinPoints tripSmack=(action 'tripSmack' trip)}}
+      {{/if}}
     {{/if}}
 
     {{#if futurePins}}
       {{#if trip.traveled}}
-        {{trip-line-wrapper pinPoints=trip.pinPoints trip=trip tripSmack=(action 'tripSmack' trip)}}
+        <!-- render nothing -->
+      {{else}}
+        {{trip-line-wrapper pinPoints=trip.pinPoints tripSmack=(action 'tripSmack' trip)}}
       {{/if}}
     {{/if}}
 

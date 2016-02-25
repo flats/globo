@@ -22,14 +22,14 @@ export default DS.Model.extend({
   }),
 
   traveled: Ember.computed('destinations', function(){
+    let bool = false;
     this.get('destinations').forEach(function(destination){
       let pin = destination.get('pin');
       if (pin.get('visited')){
-        return true;
-      } else {
-        return false;
+        bool = true;
       }
     });
+    return bool;
   })
 
 });
