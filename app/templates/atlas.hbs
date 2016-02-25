@@ -5,15 +5,12 @@
 
 
   {{#each model.pins as |pin|}}
-        <!-- if past pins is set to true, show this block -->
     {{#if pastPins}}
-        <!-- only want to show visited pins in this block -->
       {{#if pin.visited}}
         {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin) editPin='editPin' savePin='savePin' deletePin='deletePin'}}
       {{/if}}
     {{/if}}
 
-        <!-- if future pins is set to true, show this block -->
     {{#if futurePins}}
 
       {{#if pin.visited}}
@@ -29,7 +26,6 @@
   <!-- map trips -->
   {{#each model.trips as |trip|}}
 
-  <!-- if past pins is set to true, show this block -->
     {{#if pastPins}}
       {{#if trip.traveled}}
         {{trip-line-wrapper pinPoints=trip.pinPoints tripSmack=(action 'tripSmack' trip)}}
