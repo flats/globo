@@ -20,16 +20,21 @@ export default DS.Model.extend({
     });
     return locationArray;
   }),
+  visitedDestinations: Ember.computed.filterBy('destinations', 'pin.visited', true),
+  traveled: Ember.computed.notEmpty('visitedDestinations'),
+  // pinsChange: Ember.observer('travelled', function() {
+  //   // deal with the change
+  // })
 
-  traveled: Ember.computed('destinations', function(){
-    let bool = false;
-    this.get('destinations').forEach(function(destination){
-      let pin = destination.get('pin');
-      if (pin.get('visited')){
-        bool = true;
-      }
-    });
-    return bool;
-  })
+  // traveled: Ember.computed('destinations', function(){
+  //   let bool = false;
+  //   this.get('destinations').forEach(function(destination){
+  //     let pin = destination.get('pin');
+  //     if (pin.get('visited')){
+  //       bool = true;
+  //     }
+  //   });
+  //   return bool;
+  // })
 
 });
