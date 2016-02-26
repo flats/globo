@@ -5,8 +5,8 @@ export default Ember.Component.extend({
     closeTripWindow(){
       this.sendAction('closeTripWindow');
     },
-    poneDestination(destination,operator){
-      this.sendAction('poneDestination', [destination,operator]);
+    reorderDestination(destination,operator){
+      this.sendAction('reorderDestination', [destination,operator]);
     }
   }
 });
