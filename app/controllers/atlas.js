@@ -123,7 +123,11 @@ export default Ember.Controller.extend({
       let destination = args[0];
       let operator = args[1];
       destination.set('pendingOperation',operator)
-      destination.save();
+      destination.save().then(() => {
+        // TODO do something here to refresh the destination in the new order
+        // var destinations = this.store.findAll('destination')
+        // do something with destinations?
+      });
     }
   }
 });
