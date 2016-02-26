@@ -6,7 +6,7 @@ export default Ember.Component.extend({
       this.sendAction('closeTripWindow');
     },
     saveDestination(destination){
-      this.sendAction('saveDestination');
+      this.sendAction('saveDestination', destination);
     }
   }
 });
