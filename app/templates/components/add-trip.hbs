@@ -5,7 +5,7 @@
   <ol>
     {{#each trip.destinations as |destination|}}
       <li>
-        <button {{action "saveDestination" destination}}>UPDATE</button>
+        <button {{action "poneDestination" destination "up"}}>UP</button>
         {{destination.pin.nickname}}<br>
         {{destination.pin.address}}
       </li>

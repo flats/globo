@@ -119,7 +119,10 @@ export default Ember.Controller.extend({
     savePin(pin) {
       pin.save();
     },
-    saveDestination(destination){
+    poneDestination(args){
+      let destination = args[0];
+      let operator = args[1];
+      destination.set('pendingOperation',operator)
       destination.save();
     }
   }
