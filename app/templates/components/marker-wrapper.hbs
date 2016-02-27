@@ -1,3 +1,3 @@
-{{#marker-layer lat=pin.lat lng=pin.long onClick=(action "pinClick")}}
+{{#globo-marker-layer lat=pin.lat lng=pin.long onClick=(action "pinClick") addTripState=addTripState}}
   {{add-pin pin=pin editPin='editPin' savePin='savePin' deletePin='deletePin'}}
-{{/marker-layer}}
+{{/globo-marker-layer}}

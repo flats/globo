@@ -16,7 +16,7 @@
       {{#if pin.visited}}
         <!-- render nothing -->
       {{else}}
-        {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin) editPin='editPin' savePin='savePin' deletePin='deletePin'}}
+        {{marker-wrapper pin=pin pinSmack=(action 'pinSmack' pin) editPin='editPin' savePin='savePin' deletePin='deletePin' addTripState=addTripState}}
       {{/if}}
     {{/if}}
 
