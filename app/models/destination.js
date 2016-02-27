@@ -11,5 +11,6 @@ export default DS.Model.extend({
   startDate: DS.attr('date'),
   description: DS.attr('string'),
   lat: DS.attr('number'),
-  long: DS.attr('number')
+  long: DS.attr('number'),
+  pendingOperation: DS.attr('string')
 });

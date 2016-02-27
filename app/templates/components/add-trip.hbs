@@ -5,6 +5,8 @@
   <ol>
     {{#each trip.destinations as |destination|}}
       <li>
+        <button style="font-size:50%;color:grey" {{action "reorderDestination" destination "later"}}>later</button>
+        <button style="font-size:50%;color:grey" {{action "reorderDestination" destination "earlier"}}>earlier</button>
         {{destination.pin.nickname}}<br>
         {{destination.pin.address}}
       </li>
