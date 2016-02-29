@@ -10,24 +10,23 @@ export default MarkerLayer.extend({
 
   layerSetup() {
     this._super();
-    this._layer.off('click', L.marker.togglePopup);
-    // this._layer.on('click', this.newClickEvent);
+    // this._layer.off('click', L.marker.togglePopup);
+    this._layer.off('click');
+    this._layer.on('click', this.newClickEvent);
   },
 
   _click(e) {
+    debugger;
     if (!this.get('addTripState')) {
       this._layer.togglePopup;
     }
+    return false;
   },
 
-  // newClickEvent() {
-  //   debugger;
-  //   if (this.get('addTripState')) {
-
-  //   } else {
-  //     this._layer.togglePopup;
-  //   }
-  // }
+  newClickEvent() {
+    debugger;
+    return false;
+  }
 
   // changeClick: function(){
   //   this.setProperties({  // more logic here
