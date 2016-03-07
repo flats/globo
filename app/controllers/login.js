@@ -7,8 +7,8 @@ export default Ember.Controller.extend({
       const { identification, password } = this.getProperties('identification', 'password');
       this.get('session').authenticate('authenticator:devise', identification, password);
     },
-    register(){
-      debugger;
+    goToRegister(){
+      this.transitionToRoute('/register');
     }
   }
 });
