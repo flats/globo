@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
       this.get('session').authenticate('authenticator:devise', identification, password);
     },
     goToRegister(){
-      this.transitionToRoute('/register');
+      this.transitionToRoute('register');
     }
   }
 });
