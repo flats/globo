@@ -6,10 +6,10 @@
     <label for="password">Password</label>
     {{input id='password' placeholder='Enter Password' type='password' value=password class="form-control"}}
     <button type="submit" class="btn">Login</button>
-    <em id="douche">Want to join us? Request an invite.</em>
-
+    <!-- <em id="douche">Want to join us? Create an account.</em> -->
     {{#if errorMessage}}
       <p>{{errorMessage}}</p>
     {{/if}}
   </form>
+  <button class="btn" {{action "goToRegister" on='click'}}>Create an Account</button>
 </div>

@@ -6,6 +6,9 @@ export default Ember.Controller.extend({
     authenticate() {
       const { identification, password } = this.getProperties('identification', 'password');
       this.get('session').authenticate('authenticator:devise', identification, password);
+    },
+    goToRegister(){
+      this.transitionToRoute('register');
     }
   }
 });

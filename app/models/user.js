@@ -5,5 +5,6 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   createdAt: DS.attr('date'),
   pins: DS.hasMany('pin'),
-  trips: DS.hasMany('trip')
+  trips: DS.hasMany('trip'),
+  password: DS.attr('string')
 });

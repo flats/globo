@@ -9,6 +9,8 @@ Router.map(function() {
   this.route('pins');
   this.route('atlas');
   this.route('login', { path: '/' });
+  this.route('register');
+  
 });
 
 export default Router;
