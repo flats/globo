@@ -7,24 +7,30 @@ export default MarkerLayer.extend({
     
   //   this._layer.off('click', L.marker.togglePopup);
   // },
-
   layerSetup() {
     this._super();
     // this._layer.off('click', L.marker.togglePopup);
+    // this._layer.off('click');
+    // this._layer.on('click', this._layer.togglePopup());
+  },
+  tripStateChanged: function() {
     this._layer.off('click');
-    this._layer.on('click', this.newClickEvent);
-  },
-
-  _click(e) {
-    debugger;
     if (!this.get('addTripState')) {
-      this._layer.togglePopup;
+      this._layer.on('click', this._layer.togglePopup);
+    } else {
+      this._layer.on('click', this.tripClick);
     }
-    return false;
-  },
+  }.observes('addTripState'),
 
-  newClickEvent() {
-    debugger;
+  // _click(e) {
+  //   debugger;
+  //   // if (!this.get('addTripState')) {
+  //     this._layer.togglePopup();
+  //   // }
+  //   return false;
+  // },
+
+  tripClick() {
     return false;
   }
 
